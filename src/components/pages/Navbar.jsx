@@ -58,7 +58,7 @@ const Navbar = () => {
                         <NavLink
                             to="/"
                             className={({ isActive }) =>
-                                isActive ? "text-yellow-500 text-[22px]" : "hover:text-yellow-500 text-[22px]"
+                                isActive ? "px-2 py-2 rounded-lg hover:bg-blue-300 transition font-semibold" : "px-2 py-2 hover:bg-blue-300 transition font-semibold rounded-lg"
                             }
                         >
                             Home
@@ -68,7 +68,7 @@ const Navbar = () => {
                         <NavLink
                             to="/services"
                             className={({ isActive }) =>
-                                isActive ? "text-yellow-500 text-[22px]" : "hover:text-yellow-500 text-[22px]"
+                                isActive ? "px-2 py-2 rounded-lg hover:bg-blue-300 transition font-semibold" : "px-2 py-2 hover:bg-blue-300 transition font-semibold rounded-lg"
                             }
                         >
                             Pet-Listening
@@ -78,7 +78,7 @@ const Navbar = () => {
                         <NavLink
                             to="/services"
                             className={({ isActive }) =>
-                                isActive ? "text-yellow-500 text-[22px]" : "hover:text-yellow-500 text-[22px]"
+                                isActive ? "px-2 py-2 rounded-lg hover:bg-blue-300 transition font-semibold" : "px-2 py-2 hover:bg-blue-300 transition font-semibold rounded-lg"
                             }
                         >
                             Donation
@@ -89,56 +89,27 @@ const Navbar = () => {
                 </ul>
 
                 <div className="flex justify-center items-center space-x-4">
-                    {/* {!user ? (
-                        <>
-                            <Link to="/login" className="hover:text-yellow-500">
-                                Login
-                            </Link>
-                            <Link to="/register" className="hover:text-yellow-500">
-                                Register
-                            </Link>
-                        </>
-                    ) : (
-                        <div className="relative group">
-                            <img
-                                src={user.photoURL || <FaUserCircle className="text-3xl" />}
-                                alt="User"
-                                className="w-10 h-10 rounded-full border-2 border-yellow-500 cursor-pointer"
-                            />
-                            <div className="absolute hidden group-hover:block bg-black text-white rounded shadow-lg p-4 top-12 right-0">
-                                <p className="font-semibold">{user.displayName || "User"}</p>
-                                <button
-                                    onClick={handleLogout}
-                                    className="hover:text-yellow-500 hover:underline mt-2 text-xl"
-                                >
-                                    Logout
-                                </button>
-                            </div>
-                        </div>
-                    )} */}
 
                     {user ? (
                         <>
                             <Link
                                 to='/dashboard'
-                                className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'
+                                className='px-2 py-2 hover:bg-blue-300 transition font-semibold rounded-lg'
                             >
                                 Dashboard
                             </Link>
                             <div
                                 onClick={handleLogout}
-                                className='px-4 py-3 hover:bg-neutral-100 transition font-semibold cursor-pointer'
+                                className='px-2 py-2 hover:bg-blue-300 transition font-semibold rounded-lg cursor-pointer'
                             >
                                 Logout
                             </div>
                             <div>
                                 <img
-                                    className='rounded-full'
+                                    className='rounded-full  h-10 w-10 border-2 border-yellow-500 cursor-pointer'
                                     referrerPolicy='no-referrer'
                                     src={user && user.photoURL ? user.photoURL : avatarImg}
                                     alt='profile'
-                                    height='30'
-                                    width='30'
                                 />
                             </div>
                         </>
