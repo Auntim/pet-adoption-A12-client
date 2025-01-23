@@ -1,3 +1,4 @@
+import axios from "axios";
 
 function useAxiosSecure() {
     const axiosSecure = axios.create({

@@ -22,6 +22,10 @@ import Register from './components/pages/Register';
 import DashboardLayout from './Dashboard/DashboardLayout';
 import PrivateRoutes from './components/Routes/PrivateRoutes';
 import UserHome from './Dashboard/UserPage/UserHome';
+import Dashboard from './Dashboard/Dashboard';
+import AddPet from './Dashboard/AddPet/AddPet';
+import PetsListing from './components/pages/PetsListing';
+import PetDetails from './components/pages/PetDetails';
 
 const router = createBrowserRouter([
   {
@@ -40,17 +44,30 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>
+      },
+      {
+        path: 'allpets',
+        element: <PetsListing></PetsListing>
+      },
+      {
+        path: 'pets/:id',
+        element: <PrivateRoutes><PetDetails></PetDetails></PrivateRoutes>
       }
     ]
   },
   {
     path: "/dashboard",
-    element: <PrivateRoutes><DashboardLayout></DashboardLayout></PrivateRoutes>,
+    element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
     children: [
       // normal user
       {
         path: 'userHome',
         element: <UserHome></UserHome>
+      },
+      // only admin
+      {
+        path: 'addpets',
+        element: <AddPet></AddPet>
       }
     ]
   }

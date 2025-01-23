@@ -6,6 +6,7 @@ import Lottie from 'lottie-react';
 import { AuthContext } from '../provider/AuthProvider';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import { imageUpload } from '../hooks/utils';
 
 function Register() {
     const { createUser, setUser, updateuser } = useContext(AuthContext);
@@ -39,11 +40,13 @@ function Register() {
         const email = form.get('email');
         const password = form.get('password');
 
-        form.append('image', image);
+        const imageUrl = await imageUpload(image);
 
-        const { data } = await axios.post(`https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_imgbbApiKey}`, form);
+        // form.append('image', image);
 
-        const imageUrl = data.data.display_url;
+        // const { data } = await axios.post(`https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_imgbbApiKey}`, form);
+
+        // const imageUrl = data.data.display_url;
 
         const passwordError = validatePassword(password);
         if (passwordError) {

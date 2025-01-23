@@ -66,7 +66,7 @@ const Navbar = () => {
                     </li>
                     <li>
                         <NavLink
-                            to="/services"
+                            to="/allpets"
                             className={({ isActive }) =>
                                 isActive ? "px-2 py-2 rounded-lg hover:bg-blue-300 transition font-semibold" : "px-2 py-2 hover:bg-blue-300 transition font-semibold rounded-lg"
                             }
