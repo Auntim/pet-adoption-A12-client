@@ -79,7 +79,7 @@ const Dashboard = () => {
                                         Create Donation Campaign</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="rere">
+                                    <NavLink to="">
                                         <IoMdPersonAdd className="h-5 w-5" />
                                         My Donation Campaign</NavLink>
                                 </li>

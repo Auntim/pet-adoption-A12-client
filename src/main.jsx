@@ -31,6 +31,7 @@ import CreateDonationCampaigns from './components/pages/CreateDonationCampaigns'
 import DonationDetails from './components/pages/DonationDetails';
 import AllPets from './Shared/Allpets/Allpets';
 import UpdatePet from './Dashboard/Updatepet/UpdatePet';
+import MyDonationCampaigns from './Dashboard/MyDonationCampaigns';
 
 const router = createBrowserRouter([
   {
@@ -73,7 +74,7 @@ const router = createBrowserRouter([
     ]
   },
   {
-    path: "/dashboard",
+    path: "dashboard",
     element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
     children: [
       // normal user
@@ -93,7 +94,12 @@ const router = createBrowserRouter([
       {
         path: 'allAddedpets',
         element: <AllPets></AllPets>
-      }
+      },
+      // {
+      //   path: 'myDonationCampaigns',
+      //   element: <MyDonationCampaigns></MyDonationCampaigns>
+      // }
+
     ]
   }
 ]);

@@ -93,7 +93,7 @@ const Navbar = () => {
                     {user ? (
                         <>
                             <Link
-                                to='/dashboard'
+                                to='dashboard'
                                 className='px-2 py-2 hover:bg-blue-300 transition font-semibold rounded-lg'
                             >
                                 Dashboard

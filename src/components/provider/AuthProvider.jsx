@@ -11,6 +11,7 @@ import {
 } from 'firebase/auth';
 // import axios from 'axios';
 import { auth } from '../../firebase/firebase.config';
+import useAxiosPublic from '../hooks/useAxiosPublic';
 
 export const AuthContext = createContext(null);
 
@@ -19,6 +20,7 @@ const googleProvider = new GoogleAuthProvider();
 function AuthProviders({ children }) {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const axiosPublic = useAxiosPublic();
     console.log('private route user', user)
 
     const createUser = (email, password) => {
@@ -54,15 +56,22 @@ function AuthProviders({ children }) {
             if (currentUser?.email) {
                 const user = { email: currentUser.email };
 
-                // axios.post('http://localhost:5173/jwt', user, { withCredentials: true })
+                // axiosPublic.post('/jwt', user)
                 //     .then(res => {
-                //         console.log('login token', res.data);
-                //         setLoading(false);
+                //         if (res.data.token) {
+                //             localStorage.setItem('access-token', res.data.token);
+                //         }
                 //     })
             }
-            setLoading(false);
+            // else {
+            //     localStorage.removeItem('access-token');
+            //     setLoading(false);
+            // }
         });
-        return () => unsubscribe();
+
+        return () => {
+            unsubscribe();
+        }
     }, []);
 
     const userInfo = {

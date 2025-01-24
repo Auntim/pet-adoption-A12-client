@@ -1,3 +1,4 @@
+import axios from "axios";
 
 function useAxiosPublic() {
     const axiosPublic = axios.create({

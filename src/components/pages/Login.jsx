@@ -25,7 +25,7 @@ function Login() {
         const { email, password } = data;
         try {
             const result = await signInUser(email, password);
-            console.log('Email Login Successful:', result.user);
+            // console.log('Email Login Successful:', result.user);
             Swal.fire({
                 icon: 'success',
                 title: 'Login Successful',
