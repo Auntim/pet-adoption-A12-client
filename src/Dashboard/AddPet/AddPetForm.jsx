@@ -13,7 +13,7 @@ const AddPetForm = ({ handleSubmit, uploadImage, setUploadImage, loading }) => {
 
     return (
         <form onSubmit={handleSubmit} className="max-w-2xl mx-auto p-6 bg-white shadow-md rounded-lg">
-            <h2 className="text-2xl font-bold mb-4 text-center">Add a Pet</h2>
+            <h2 className="text-4xl text-center font-bold text-orange-600 mb-6 ">---Add Pet---</h2>
 
             {/* Pet Name */}
             <div className="mb-4">

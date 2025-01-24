@@ -1,7 +1,15 @@
-import { FaAd, FaBook, FaCalendar, FaEnvelope, FaHome, FaList, FaSearch, FaShoppingCart, FaUsers, FaUtensils } from "react-icons/fa";
+import { FaBook, FaCalendar, FaEnvelope, FaHome, FaList, FaSearch, FaShoppingCart, FaUsers, FaUtensils } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 // import useCart from "../hooks/useCart";
 import useAdmin from "../components/hooks/useAdmin";
+import { MdOutlinePets } from "react-icons/md";
+import { BiSolidDonateBlood } from "react-icons/bi";
+import { IoAddSharp } from "react-icons/io5";
+import { IoMdPersonAdd } from "react-icons/io";
+import { MdBloodtype } from "react-icons/md";
+
+
+
 
 
 const Dashboard = () => {
@@ -53,22 +61,32 @@ const Dashboard = () => {
                                 <li>
                                     <NavLink to="/dashboard/history">
                                         <FaCalendar></FaCalendar>
-                                        Not History</NavLink>
+                                        Adoption Request</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/dashboard/cart">
+                                    <NavLink to="/dashboard/allAddedpets">
                                         <FaShoppingCart></FaShoppingCart>
-                                        My Cart </NavLink>
+                                        My Added Pets </NavLink>
                                 </li>
                                 <li>
                                     <NavLink to="/dashboard/addpets">
-                                        <FaUtensils></FaUtensils>
+                                        <IoAddSharp className="h-5 w-5"></IoAddSharp>
                                         Add Pets</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/dashboard/paymentHistory">
+                                    <NavLink to="/dashboard/donationCampaigns">
                                         <FaList></FaList>
-                                        Real Payment History</NavLink>
+                                        Create Donation Campaign</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="rere">
+                                        <IoMdPersonAdd className="h-5 w-5" />
+                                        My Donation Campaign</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="ffd">
+                                        <MdBloodtype className="h-5 w-5"></MdBloodtype>
+                                        My Donation </NavLink>
                                 </li>
                             </>
                     }
@@ -80,14 +98,14 @@ const Dashboard = () => {
                             Home</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/order/salad">
-                            <FaSearch></FaSearch>
-                            Menu</NavLink>
+                        <NavLink to="/allpets">
+                            <MdOutlinePets />
+                            Allpets</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/order/contact">
-                            <FaEnvelope></FaEnvelope>
-                            Contact</NavLink>
+                        <NavLink to="/alldonationCampaigns">
+                            <BiSolidDonateBlood />
+                            Donation</NavLink>
                     </li>
                 </ul>
             </div>

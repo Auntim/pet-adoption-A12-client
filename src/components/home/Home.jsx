@@ -16,7 +16,7 @@ function Home() {
                 <Carousel></Carousel>
             </section>
             <section>
-                <PetsListing></PetsListing>
+                <PetsListing limit={6}></PetsListing>
             </section>
             <section>
                 <CTASection></CTASection>

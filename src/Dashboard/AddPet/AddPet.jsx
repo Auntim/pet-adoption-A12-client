@@ -47,8 +47,8 @@ const AddPet = () => {
             longDescription,
             image: imageUrl,
             owner,
-            adopted: false, // Default to not adopted
-            dateAdded: new Date().toISOString(), // Add current date
+            adopted: false,
+            dateAdded: new Date().toISOString(),
         };
 
         // console.table(petData);

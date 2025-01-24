@@ -1,4 +1,4 @@
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { FaGoogle } from "react-icons/fa";
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
@@ -12,6 +12,8 @@ import { AuthContext } from '../provider/AuthProvider';
 function Login() {
     const { googleSignIn, signInUser } = useContext(AuthContext);
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
     const {
         register,
@@ -29,7 +31,7 @@ function Login() {
                 title: 'Login Successful',
                 text: `Welcome back, ${result.user.email}!`,
             });
-            navigate('/');
+            navigate(from, { replace: true });
         } catch (error) {
             console.error('Email Login Error:', error.message);
             Swal.fire({
@@ -49,7 +51,7 @@ function Login() {
                 title: 'Login Successful',
                 text: `Welcome back, ${result.user.displayName}!`,
             });
-            navigate('/');
+            navigate(from, { replace: true });
         } catch (error) {
             console.error('Google Sign-In Error:', error.message);
             Swal.fire({

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const PetsListing = () => {
+const PetsListing = ({ limit }) => {
     const [pets, setPets] = useState([]);
     const [filteredPets, setFilteredPets] = useState([]);
     const [searchQuery, setSearchQuery] = useState("");
@@ -19,6 +19,7 @@ const PetsListing = () => {
 
                 // Filter only non-adopted pets and sort by date (descending)
                 const nonAdoptedPets = data
+                    .slice(0, limit)
                     .filter((pet) => !pet.adopted)
                     .sort((a, b) => new Date(b.date) - new Date(a.date));
 
@@ -66,7 +67,7 @@ const PetsListing = () => {
 
     return (
         <div className="p-6">
-            <h2 className="text-3xl font-bold text-center mb-6">Available Pets for Adoption</h2>
+            <h2 className="text-4xl text-center font-bold text-orange-600 mb-6 ">---Available Pets for Adoption---</h2>
 
             {/* Search and Filter */}
             <div className="flex justify-between items-center mb-6">

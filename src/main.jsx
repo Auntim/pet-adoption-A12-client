@@ -27,6 +27,10 @@ import AddPet from './Dashboard/AddPet/AddPet';
 import PetsListing from './components/pages/PetsListing';
 import PetDetails from './components/pages/PetDetails';
 import DonationCampaign from './components/pages/DonationCampaign';
+import CreateDonationCampaigns from './components/pages/CreateDonationCampaigns';
+import DonationDetails from './components/pages/DonationDetails';
+import AllPets from './Shared/Allpets/Allpets';
+import UpdatePet from './Dashboard/Updatepet/UpdatePet';
 
 const router = createBrowserRouter([
   {
@@ -55,8 +59,16 @@ const router = createBrowserRouter([
         element: <PrivateRoutes><PetDetails></PetDetails></PrivateRoutes>
       },
       {
-        path: 'donationCampaigns',
+        path: 'alldonationCampaigns',
         element: <DonationCampaign></DonationCampaign>
+      },
+      {
+        path: 'donationCampaigns/:id',
+        element: <PrivateRoutes><DonationDetails></DonationDetails></PrivateRoutes>
+      },
+      {
+        path: '/dashboard/update-pet/:id',
+        element: <UpdatePet></UpdatePet>
       }
     ]
   },
@@ -73,6 +85,14 @@ const router = createBrowserRouter([
       {
         path: 'addpets',
         element: <AddPet></AddPet>
+      },
+      {
+        path: 'donationCampaigns',
+        element: <CreateDonationCampaigns></CreateDonationCampaigns>
+      },
+      {
+        path: 'allAddedpets',
+        element: <AllPets></AllPets>
       }
     ]
   }

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const DonationCampaign = () => {
     const [campaigns, setCampaigns] = useState([]);
@@ -12,7 +13,7 @@ const DonationCampaign = () => {
 
         try {
             const response = await fetch(
-                `http://localhost:5000/donationCampaigns?page=${page}&limit=6`
+                `http://localhost:5000/alldonationCampaigns?page=${page}&limit=6`
             );
             const data = await response.json();
 
@@ -51,7 +52,7 @@ const DonationCampaign = () => {
 
     return (
         <div className="p-8">
-            <h1 className="text-2xl font-bold text-center mb-6">Donation Campaigns</h1>
+            <h2 className="text-4xl text-center font-bold text-orange-600 mb-6 ">--- Donation Campaign---</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {campaigns.map((campaign) => (
                     <div
@@ -70,9 +71,12 @@ const DonationCampaign = () => {
                         <p className="text-sm text-gray-600">
                             <span className="font-bold">Donated:</span> ${campaign.donatedAmount}
                         </p>
-                        <button className="mt-4 w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
-                            View Details
-                        </button>
+
+                        <Link to={`/donationCampaigns/${campaign._id}`}>
+                            <button className="mt-4 w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
+                                View Details
+                            </button>
+                        </Link>
                     </div>
                 ))}
             </div>
