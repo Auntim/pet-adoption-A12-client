@@ -1,5 +1,6 @@
 import React from "react";
 import cta from '../assets/images/carousel2.jpeg'
+import { Link } from "react-router-dom";
 
 const CTASection = () => {
     return (
@@ -16,12 +17,16 @@ const CTASection = () => {
                         Your care can provide them with the happiness they deserve.
                     </p>
                     <div className="mt-6 flex justify-center lg:justify-start gap-4">
-                        <button className="bg-green-500 text-white px-6 py-3 rounded-lg shadow hover:bg-green-600 transition">
-                            Explore Pets
-                        </button>
-                        <button className="bg-gray-800 text-white px-6 py-3 rounded-lg shadow hover:bg-gray-900 transition">
-                            Learn More
-                        </button>
+                        <Link to="/allpets">
+                            <button className="bg-green-500 text-white px-6 py-3 rounded-lg shadow hover:bg-green-600 transition">
+                                Explore Pets
+                            </button>
+                        </Link>
+                        <Link>
+                            <button className="bg-gray-800 text-white px-6 py-3 rounded-lg shadow hover:bg-gray-900 transition">
+                                Learn More
+                            </button>
+                        </Link>
                     </div>
                 </div>
                 {/* Right Image */}

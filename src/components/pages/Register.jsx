@@ -71,7 +71,7 @@ function Register() {
                     .then(res => {
                         if (res.data.insertedId) {
                             toast.success('Registration successful. Please login.');
-                            navigate('/login');
+                            navigate('/');
                         }
                     })
 

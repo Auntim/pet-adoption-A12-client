@@ -6,7 +6,7 @@ import { BiSolidDonateBlood } from "react-icons/bi";
 import { IoAddSharp } from "react-icons/io5";
 import { IoMdPersonAdd } from "react-icons/io";
 import { MdBloodtype } from "react-icons/md";
-// import useAdmin from "../components/hooks/useAdmin";
+import useAdmin from "../components/hooks/useAdmin";
 
 
 
@@ -16,8 +16,8 @@ const Dashboard = () => {
     // const [cart] = useCart();
 
     // TODO: get isAdmin value from the database
-    // const [isAdmin] = useAdmin();
-    const isAdmin = true;
+    const [isAdmin] = useAdmin();
+    // const isAdmin = true;
 
     return (
         <div className="flex">
@@ -31,25 +31,21 @@ const Dashboard = () => {
                                     <FaHome></FaHome>
                                     Admin Home</NavLink>
                             </li>
-                            <li>
-                                <NavLink to="/dashboard/addpets">
-                                    <FaUtensils></FaUtensils>
-                                    Add Pets</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/dashboard/allpets">
-                                    <MdOutlinePets />
-                                    Allpets</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/dashboard/bookings">
-                                    <FaBook></FaBook>
-                                    Manage Bookings</NavLink>
-                            </li>
+
                             <li>
                                 <NavLink to="/dashboard/users">
                                     <FaUsers></FaUsers>
                                     All Users</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/dashboard/allpets">
+                                    <MdOutlinePets />
+                                    All Pets</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/dashboard/donate">
+                                    <BiSolidDonateBlood />
+                                    All Donations</NavLink>
                             </li>
                         </>
                             :
@@ -59,11 +55,7 @@ const Dashboard = () => {
                                         <FaHome></FaHome>
                                         User Home</NavLink>
                                 </li>
-                                <li>
-                                    <NavLink to="/dashboard/users">
-                                        <FaHome></FaHome>
-                                        All user</NavLink>
-                                </li>
+
                                 <li>
                                     <NavLink to="/dashboard/history">
                                         <FaCalendar></FaCalendar>

@@ -22,7 +22,7 @@ const Navbar = () => {
                 icon: "success",
                 title: "Logged Out!",
                 text: "You have been successfully logged out.",
-                timer: 2000,
+                timer: 1000,
                 showConfirmButton: false,
             });
             navigate("/login");
