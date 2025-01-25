@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { FaTrashAlt, FaUsers } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../components/hooks/useAxiosSecure";
+import toast from "react-hot-toast";
 
 
 const AllUsers = () => {
@@ -20,13 +21,14 @@ const AllUsers = () => {
                 console.log(res.data)
                 if (res.data.modifiedCount > 0) {
                     refetch();
-                    Swal.fire({
-                        position: "top-end",
-                        icon: "success",
-                        title: `${user.name} is an Admin Now!`,
-                        showConfirmButton: false,
-                        timer: 1500
-                    });
+                    toast.success(`${user.name} is an Admin Now!`);
+                    // Swal.fire({
+                    //     position: "top-end",
+                    //     icon: "success",
+                    //     title: `${user.name} is an Admin Now!`,
+                    //     showConfirmButton: false,
+                    //     timer: 1500
+                    // });
                 }
             })
     }
@@ -49,7 +51,7 @@ const AllUsers = () => {
                             refetch();
                             Swal.fire({
                                 title: "Deleted!",
-                                text: "Your file has been deleted.",
+                                text: "User has been deleted.",
                                 icon: "success"
                             });
                         }
@@ -85,7 +87,7 @@ const AllUsers = () => {
                                 <td>
                                     {user.role === 'admin' ? 'Admin' : <button
                                         onClick={() => handleMakeAdmin(user)}
-                                        className="btn btn-lg bg-orange-500">
+                                        className="px-2 py-2 bg-slate-700 text-white rounded">
                                         <FaUsers className="text-white 
                                         text-2xl"></FaUsers>
                                     </button>}

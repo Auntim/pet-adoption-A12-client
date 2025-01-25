@@ -37,9 +37,9 @@ const Dashboard = () => {
                                     Add Pets</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/dashboard/manageItems">
-                                    <FaList></FaList>
-                                    Manage Items</NavLink>
+                                <NavLink to="/dashboard/allpets">
+                                    <MdOutlinePets />
+                                    Allpets</NavLink>
                             </li>
                             <li>
                                 <NavLink to="/dashboard/bookings">

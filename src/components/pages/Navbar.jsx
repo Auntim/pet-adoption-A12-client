@@ -104,13 +104,19 @@ const Navbar = () => {
                             >
                                 Logout
                             </div>
-                            <div>
+                            <div className="relative group">
                                 <img
-                                    className='rounded-full  h-10 w-10 border-2 border-yellow-500 cursor-pointer'
+                                    className='rounded-full hover:  h-10 w-10 border-2 border-yellow-500 cursor-pointer'
                                     referrerPolicy='no-referrer'
                                     src={user && user.photoURL ? user.photoURL : avatarImg}
                                     alt='profile'
+                                // title={user && user.displayName ? user.displayName : user.email}
                                 />
+                                {user && user.displayName && (
+                                    <span className="absolute bottom-full left-1/2 transform -translate-x-1/2  px-2 py-1 text-sm text-white bg-black rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
+                                        {user.displayName}
+                                    </span>
+                                )}
                             </div>
                         </>
                     ) : (

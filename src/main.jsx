@@ -104,6 +104,11 @@ const router = createBrowserRouter([
         path: 'users',
         element: <AllUsers></AllUsers>
       }
+      ,
+      {
+        path: 'allpets',
+        element: <PetsListing></PetsListing>
+      }
 
     ]
   }
