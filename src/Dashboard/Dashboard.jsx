@@ -82,7 +82,7 @@ const Dashboard = () => {
                                         My Donation Campaign</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="ffd">
+                                    <NavLink to="/dashboard/my-donations">
                                         <MdBloodtype className="h-5 w-5"></MdBloodtype>
                                         My Donation </NavLink>
                                 </li>
