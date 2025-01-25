@@ -19,7 +19,7 @@ import AuthProviders from './components/provider/AuthProvider';
 import Login from './components/pages/Login';
 import { HelmetProvider } from 'react-helmet-async';
 import Register from './components/pages/Register';
-import DashboardLayout from './Dashboard/DashboardLayout';
+// import DashboardLayout from './Dashboard/DashboardLayout';
 import PrivateRoutes from './components/Routes/PrivateRoutes';
 import UserHome from './Dashboard/UserPage/UserHome';
 import Dashboard from './Dashboard/Dashboard';
@@ -32,6 +32,7 @@ import DonationDetails from './components/pages/DonationDetails';
 import AllPets from './Shared/Allpets/Allpets';
 import UpdatePet from './Dashboard/Updatepet/UpdatePet';
 import MyDonationCampaigns from './Dashboard/MyDonationCampaigns';
+import AllUsers from './Dashboard/AllUser/AllUsers';
 
 const router = createBrowserRouter([
   {
@@ -95,10 +96,14 @@ const router = createBrowserRouter([
         path: 'allAddedpets',
         element: <AllPets></AllPets>
       },
-      // {
-      //   path: 'myDonationCampaigns',
-      //   element: <MyDonationCampaigns></MyDonationCampaigns>
-      // }
+      {
+        path: 'myDonationCampaigns',
+        element: <MyDonationCampaigns></MyDonationCampaigns>
+      },
+      {
+        path: 'users',
+        element: <AllUsers></AllUsers>
+      }
 
     ]
   }

@@ -4,11 +4,14 @@ import { Helmet } from 'react-helmet-async';
 import registrationLotti from '../../assets/lotti/logout.json'
 import Lottie from 'lottie-react';
 import { AuthContext } from '../provider/AuthProvider';
-import axios from 'axios';
+// import axios from 'axios';
 import toast from 'react-hot-toast';
 import { imageUpload } from '../hooks/utils';
+import useAxiosPublic from '../hooks/useAxiosPublic';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 function Register() {
+    const axiosPublic = useAxiosPublic();
     const { createUser, setUser, updateuser } = useContext(AuthContext);
     const [error, setError] = useState('');
     const navigate = useNavigate();
@@ -59,8 +62,19 @@ function Register() {
                 const user = result.user;
                 setUser(user);
                 updateuser(name, imageUrl)
-                navigate('/');
-                toast.success('Registration successful');
+                const userInfo = {
+                    name,
+                    email,
+                    imageUrl
+                }
+                axiosPublic.post('/users', userInfo)
+                    .then(res => {
+                        if (res.data.insertedId) {
+                            toast.success('Registration successful. Please login.');
+                            navigate('/login');
+                        }
+                    })
+
             })
             .catch((error) => {
                 setError(error.message || 'Registration failed. Please try again.');
@@ -77,9 +91,9 @@ function Register() {
             <div className=' rounded-lg p-6'>
                 <Lottie className='h-30 w-30 w-full' animationData={registrationLotti}></Lottie>
             </div>
-            <div className="card bg-gradient-to-r from-violet-500 to-fuchsia-500 w-full text-white max-w-sm shadow-2xl">
+            <div className="card bg-gradient-to-r from-violet-500 to-fuchsia-500 w-full text-white max-w-sm my-5 shadow-2xl">
                 <form onSubmit={handleSignUp} className="card-body ">
-                    <h2 className="text-3xl font-bold text-slate-800">Register</h2>
+                    <h2 className="text-2xl font-bold text-slate-800">Register</h2>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Name</span>
@@ -129,7 +143,7 @@ function Register() {
                             required
                         />
                         <label className="flex justify-center items-center">
-                            <p className="text-center my-3 label-text-alt text-[18px]">
+                            <p className="text-center my-1 label-text-alt text-[14px]">
                                 Already have an Account?{' '}
                                 <span>
                                     <Link to="/login" className="text-xl font-semibold text-slate-700 hover:underline">
@@ -140,8 +154,12 @@ function Register() {
                         </label>
                     </div>
                     {error && <p className="text-red-500 text-sm">{error}</p>}
-                    <div className="form-control mt-6">
+                    <div className="form-control mt-2">
                         <button className="btn btn-primary">Sign Up</button>
+                    </div>
+                    <div className="divider">OR</div>
+                    <div>
+                        <SocialLogin></SocialLogin>
                     </div>
                 </form>
             </div>

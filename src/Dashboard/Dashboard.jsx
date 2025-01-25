@@ -1,12 +1,12 @@
-import { FaBook, FaCalendar, FaEnvelope, FaHome, FaList, FaSearch, FaShoppingCart, FaUsers, FaUtensils } from "react-icons/fa";
+import { FaBook, FaCalendar, FaHome, FaList, FaShoppingCart, FaUsers, FaUtensils } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 // import useCart from "../hooks/useCart";
-import useAdmin from "../components/hooks/useAdmin";
 import { MdOutlinePets } from "react-icons/md";
 import { BiSolidDonateBlood } from "react-icons/bi";
 import { IoAddSharp } from "react-icons/io5";
 import { IoMdPersonAdd } from "react-icons/io";
 import { MdBloodtype } from "react-icons/md";
+// import useAdmin from "../components/hooks/useAdmin";
 
 
 
@@ -16,7 +16,8 @@ const Dashboard = () => {
     // const [cart] = useCart();
 
     // TODO: get isAdmin value from the database
-    const [isAdmin] = useAdmin();
+    // const [isAdmin] = useAdmin();
+    const isAdmin = true;
 
     return (
         <div className="flex">
@@ -59,6 +60,11 @@ const Dashboard = () => {
                                         User Home</NavLink>
                                 </li>
                                 <li>
+                                    <NavLink to="/dashboard/users">
+                                        <FaHome></FaHome>
+                                        All user</NavLink>
+                                </li>
+                                <li>
                                     <NavLink to="/dashboard/history">
                                         <FaCalendar></FaCalendar>
                                         Adoption Request</NavLink>
@@ -79,7 +85,7 @@ const Dashboard = () => {
                                         Create Donation Campaign</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="">
+                                    <NavLink to="/dashboard/myDonationCampaigns">
                                         <IoMdPersonAdd className="h-5 w-5" />
                                         My Donation Campaign</NavLink>
                                 </li>

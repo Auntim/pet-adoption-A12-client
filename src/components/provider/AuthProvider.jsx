@@ -56,17 +56,18 @@ function AuthProviders({ children }) {
             if (currentUser?.email) {
                 const user = { email: currentUser.email };
 
-                // axiosPublic.post('/jwt', user)
-                //     .then(res => {
-                //         if (res.data.token) {
-                //             localStorage.setItem('access-token', res.data.token);
-                //         }
-                //     })
+                axiosPublic.post('/jwt', user)
+                    .then(res => {
+                        if (res.data.token) {
+                            localStorage.setItem('access-token', res.data.token);
+                        }
+                    })
             }
-            // else {
-            //     localStorage.removeItem('access-token');
-            //     setLoading(false);
-            // }
+            else {
+                localStorage.removeItem('access-token');
+                setLoading(false);
+            }
+            setLoading(false);
         });
 
         return () => {
