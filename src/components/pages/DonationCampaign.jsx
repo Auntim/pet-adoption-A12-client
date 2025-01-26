@@ -56,7 +56,7 @@ const DonationCampaign = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {campaigns.map((campaign) => (
                     <div
-                        key={campaign._id}
+                        key={campaign?._id}
                         className="p-4 border rounded-lg shadow hover:shadow-md transition"
                     >
                         <img

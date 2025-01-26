@@ -115,6 +115,10 @@ const router = createBrowserRouter([
         path: 'allpets',
         element: <PetsListing></PetsListing>
       },
+      {
+        path: 'my-donations',
+        element: <MyDonations></MyDonations>
+      }
       // {
       //   path: '/my-donations',
       //   element: <MyDonations></MyDonations>

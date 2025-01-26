@@ -65,7 +65,7 @@ const CreateDonationCampaigns = () => {
 
             if (response.ok) {
                 toast.success("Donation campaign created successfully!");
-                navigate("/donationCampaigns");
+                navigate("/dashboard/myDonationCampaigns");
             } else {
                 toast.error("Failed to create donation campaign.");
             }
