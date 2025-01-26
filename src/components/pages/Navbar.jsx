@@ -10,10 +10,40 @@ import logo from '../../assets/images/logo.png'
 import avatarImg from '../../assets/images/logo.png'
 
 
+
+
 const Navbar = () => {
     const { user, logout } = useContext(AuthContext);
     const navigate = useNavigate();
+    // const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+
     const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+
+    const toggleTheme = () => {
+        const newTheme = theme === "light" ? "dark" : "light";
+        setTheme(newTheme);
+        localStorage.setItem("theme", newTheme);
+    };
+
+
+    useEffect(() => {
+        document.body.className = theme;
+    }, [theme]);
+
+    // useEffect(() => {
+    //     if (theme === "dark") {
+    //         document.documentElement.classList.add("dark");
+    //     } else {
+    //         document.documentElement.classList.remove("dark");
+    //     }
+    //     localStorage.setItem("theme", theme);
+    // }, [theme]);
+
+    // // Toggle theme function
+    // const toggleTheme = () => {
+    //     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+    // };
+
 
     const handleLogout = async () => {
         try {
@@ -35,15 +65,6 @@ const Navbar = () => {
         }
     };
 
-    const toggleTheme = () => {
-        const newTheme = theme === "light" ? "dark" : "light";
-        setTheme(newTheme);
-        localStorage.setItem("theme", newTheme);
-    };
-
-    useEffect(() => {
-        document.body.className = theme;
-    }, [theme]);
 
     return (
         <nav className="bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white">
@@ -143,6 +164,7 @@ const Navbar = () => {
                     >
                         {theme === "light" ? "Dark" : "Light"} Mode
                     </button>
+
                 </div>
             </div>
 

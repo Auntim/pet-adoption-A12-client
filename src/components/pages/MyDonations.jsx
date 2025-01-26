@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import { AuthContext } from "../provider/AuthProvider";
+import LoadingSpinner from "../../Shared/LoadingSpinner";
 
 const MyDonations = () => {
     const { user } = useContext(AuthContext)
@@ -54,7 +55,7 @@ const MyDonations = () => {
     };
 
     if (loading) {
-        return <p>Loading...</p>;
+        return <LoadingSpinner></LoadingSpinner>;
     }
 
     return (
