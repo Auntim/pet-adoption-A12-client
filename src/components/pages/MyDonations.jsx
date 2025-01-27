@@ -13,7 +13,7 @@ const MyDonations = () => {
         const fetchDonations = async () => {
             try {
                 const response = await fetch(
-                    `http://localhost:5000/my-donations?email=${userEmail}`
+                    `http://localhost:5000/payments`
                 );
                 const data = await response.json();
                 setDonations(data);
@@ -30,7 +30,7 @@ const MyDonations = () => {
     const handleRefund = async (campaignId) => {
         try {
             const response = await fetch(
-                `http://localhost:5000/donations/${campaignId}/refund`,
+                `http://localhost:5000/payments/${campaignId}/refund`,
                 {
                     method: "PATCH",
                     headers: {

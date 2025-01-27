@@ -43,7 +43,7 @@ const Dashboard = () => {
                                     All Pets</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/dashboard/donate">
+                                <NavLink to="/dashboard/payment-history-all">
                                     <BiSolidDonateBlood />
                                     All Donations</NavLink>
                             </li>
