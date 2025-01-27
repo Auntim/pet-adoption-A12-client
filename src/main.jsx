@@ -33,7 +33,8 @@ import AllPets from './Shared/Allpets/Allpets';
 import UpdatePet from './Dashboard/Updatepet/UpdatePet';
 import MyDonationCampaigns from './Dashboard/MyDonationCampaigns';
 import AllUsers from './Dashboard/AllUser/AllUsers';
-import MyDonations from './components/pages/MyDonations';
+// import MyDonations from './components/pages/MyDonations';
+import PaymentHistory from './components/pages/PaymentHistory';
 // import MyDonations from './components/pages/MyDonations';
 
 const router = createBrowserRouter([
@@ -115,10 +116,15 @@ const router = createBrowserRouter([
         path: 'allpets',
         element: <PetsListing></PetsListing>
       },
+
       {
-        path: 'my-donations',
-        element: <MyDonations></MyDonations>
-      }
+        path: 'payment-history',
+        element: <PaymentHistory></PaymentHistory>
+      },
+      // {
+      //   path: 'my-donations',
+      //   element: <MyDonations></MyDonations>
+      // },
       // {
       //   path: '/my-donations',
       //   element: <MyDonations></MyDonations>

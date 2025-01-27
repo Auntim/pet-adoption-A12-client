@@ -15,34 +15,7 @@ import avatarImg from '../../assets/images/logo.png'
 const Navbar = () => {
     const { user, logout } = useContext(AuthContext);
     const navigate = useNavigate();
-    // const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
-    const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
-
-    const toggleTheme = () => {
-        const newTheme = theme === "light" ? "dark" : "light";
-        setTheme(newTheme);
-        localStorage.setItem("theme", newTheme);
-    };
-
-
-    useEffect(() => {
-        document.body.className = theme;
-    }, [theme]);
-
-    // useEffect(() => {
-    //     if (theme === "dark") {
-    //         document.documentElement.classList.add("dark");
-    //     } else {
-    //         document.documentElement.classList.remove("dark");
-    //     }
-    //     localStorage.setItem("theme", theme);
-    // }, [theme]);
-
-    // // Toggle theme function
-    // const toggleTheme = () => {
-    //     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
-    // };
 
 
     const handleLogout = async () => {
@@ -158,12 +131,7 @@ const Navbar = () => {
                     )}
                 </div>
                 <div className="rounded bg-gray-200 dark:bg-gray-800">
-                    <button
-                        onClick={toggleTheme}
-                        className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 dark:bg-blue-700"
-                    >
-                        {theme === "light" ? "Dark" : "Light"} Mode
-                    </button>
+                    {/* dark buuton */}
 
                 </div>
             </div>

@@ -125,6 +125,7 @@ const DonationForm = ({ donationAmount, setDonationAmount, closeModal, campaignI
                 body: JSON.stringify({
                     amount: parseFloat(donationAmount) * 100,
                     campaignId,
+                    donorEmail: user?.email,
                 }),
 
             });
