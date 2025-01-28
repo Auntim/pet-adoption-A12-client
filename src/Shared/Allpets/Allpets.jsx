@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import toast from "react-hot-toast";
 import { FaPen, FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -84,6 +85,9 @@ const AllPets = () => {
 
     return (
         <div className="p-6">
+            <Helmet>
+                <title>Pet | AddedPets</title>
+            </Helmet>
             <h2 className="text-4xl text-center font-bold text-orange-600 mb-6 ">--- All Added Pets are here---</h2>
             {loading ? (
                 <p>Loading...</p>

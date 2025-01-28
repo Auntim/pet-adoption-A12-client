@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
 import { AuthContext } from "../components/provider/AuthProvider";
 import LoadingSpinner from "../Shared/LoadingSpinner";
+import { Helmet } from "react-helmet-async";
 
 const MyDonationCampaigns = () => {
     const { user } = useContext(AuthContext);
@@ -71,6 +72,9 @@ const MyDonationCampaigns = () => {
 
     return (
         <div className="container mx-auto py-6">
+            <Helmet>
+                <title>Pet | My-Campaign</title>
+            </Helmet>
             <h2 className="text-4xl text-center font-bold text-orange-600 mb-6 ">---My Donation Campaign---</h2>
             <div className="overflow-x-auto">
                 <table className="table-auto w-full text-left border-collapse border border-gray-300">

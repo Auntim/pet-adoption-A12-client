@@ -7,6 +7,7 @@ import { IoAddSharp } from "react-icons/io5";
 import { IoMdPersonAdd } from "react-icons/io";
 import { MdBloodtype } from "react-icons/md";
 import useAdmin from "../components/hooks/useAdmin";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -21,6 +22,9 @@ const Dashboard = () => {
 
     return (
         <div className="flex dark:bg-medium dark:text-white">
+            <Helmet>
+                <title>Pet | Dashboard</title>
+            </Helmet>
             {/* dashboard side bar */}
             <div className="w-64 min-h-screen bg-orange-400 dark:bg-stone-500 dark:text-white">
                 <ul className="menu p-4 ">

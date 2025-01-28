@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 const CreateDonationCampaigns = () => {
     const [loading, setLoading] = useState(false);
@@ -79,6 +80,9 @@ const CreateDonationCampaigns = () => {
 
     return (
         <div className="p-8">
+            <Helmet>
+                <title>Pet | Campaign</title>
+            </Helmet>
             <h2 className="text-4xl text-center font-bold text-orange-600 mb-6 ">---Create Donation Campaign---</h2>
             <form onSubmit={handleSubmit} className="max-w-lg mx-auto bg-white p-6 shadow-md rounded">
                 <div className="mb-4">

@@ -69,7 +69,7 @@ const AddPet = () => {
     return (
         <div>
             <Helmet>
-                <title>Add Pet | Dashboard</title>
+                <title>Add Pet | Add-Pets</title>
             </Helmet>
 
             {/* Form */}

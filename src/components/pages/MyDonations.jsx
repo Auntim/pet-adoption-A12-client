@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import { AuthContext } from "../provider/AuthProvider";
 import LoadingSpinner from "../../Shared/LoadingSpinner";
+import { Helmet } from "react-helmet-async";
 
 const MyDonations = () => {
     const { user } = useContext(AuthContext)
@@ -60,6 +61,9 @@ const MyDonations = () => {
 
     return (
         <div className="p-6">
+            <Helmet>
+                <title>Pet | Donations</title>
+            </Helmet>
             <h2 className="text-3xl font-bold mb-4 text-center">My Donations</h2>
             {donations.length === 0 ? (
                 <p className="text-center text-gray-500">No donations found.</p>

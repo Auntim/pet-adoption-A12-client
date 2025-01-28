@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 
 const DonationCampaign = () => {
@@ -52,6 +53,9 @@ const DonationCampaign = () => {
 
     return (
         <div className="p-8 dark:bg-medium dark:text-white">
+            <Helmet>
+                <title>Pet | Donation</title>
+            </Helmet>
             <h2 className="text-4xl text-center font-bold text-orange-600 mb-6 ">--- Donation Campaign---</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {campaigns.map((campaign) => (

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 const PetsListing = ({ limit }) => {
@@ -67,6 +68,9 @@ const PetsListing = ({ limit }) => {
 
     return (
         <div className="p-6 dark:bg-medium dark:text-white bg-w">
+            <Helmet>
+                <title>Pet | Pet-Linting</title>
+            </Helmet>
             <h2 className="text-4xl text-center font-bold text-orange-600 mb-6 ">---Available Pets for Adoption---</h2>
 
             {/* Search and Filter */}

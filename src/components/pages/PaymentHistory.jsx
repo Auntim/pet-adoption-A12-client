@@ -5,6 +5,7 @@ import { AuthContext } from "../provider/AuthProvider";
 // import useAxiosPublic from "../hooks/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "../hooks/useAxiosPublic";
+import { Helmet } from "react-helmet-async";
 
 
 const PaymentHistory = () => {
@@ -28,6 +29,9 @@ const PaymentHistory = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Pet | My-Doantion</title>
+            </Helmet>
             <h2 className='text-2xl text-semibold text-center'>payments History: {payments.length}</h2>
             <div className="overflow-x-auto">
                 <table className="table table-zebra">
