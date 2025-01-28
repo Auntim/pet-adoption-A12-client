@@ -13,7 +13,7 @@ const MyDonationCampaigns = () => {
 
     // Fetch donation campaigns created by the logged-in user
     // const { data: donations = [], refetch } = useQuery(["myDonations"], async () => {
-    //     const response = await fetch("http://localhost:5000/my-donations", {
+    //     const response = await fetch("https://pet-adoption-server-side-teal.vercel.app/my-donations", {
     //         headers: {
     //             Authorization: `Bearer ${localStorage.getItem("access-token")}`, // Include token for authentication
     //         },
@@ -24,7 +24,7 @@ const MyDonationCampaigns = () => {
     const { data: donationCampaigns = [], isLoading, error } = useQuery({
         queryKey: ['myDonationCampaigns', user?.email],
         queryFn: async () => {
-            const response = await fetch(`http://localhost:5000/donationCampaigns?email=${user?.email}`);
+            const response = await fetch(`https://pet-adoption-server-side-teal.vercel.app/donationCampaigns?email=${user?.email}`);
             if (!response.ok) {
                 throw new Error('Failed to fetch donation campaigns');
             }
@@ -39,7 +39,7 @@ const MyDonationCampaigns = () => {
     // Handle pause/unpause
     const togglePauseDonation = async (id, paused) => {
         try {
-            const response = await fetch(`http://localhost:5000/donations/${id}/pause`, {
+            const response = await fetch(`https://pet-adoption-server-side-teal.vercel.app/donations/${id}/pause`, {
                 method: "PATCH",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ paused: !paused }),
@@ -59,7 +59,7 @@ const MyDonationCampaigns = () => {
     // View donators
     const handleViewDonators = async (id) => {
         try {
-            const response = await fetch(`http://localhost:5000/donations/${id}/donators`);
+            const response = await fetch(`https://pet-adoption-server-side-teal.vercel.app/donations/${id}/donators`);
             const data = await response.json();
             setDonators(data);
             setIsModalOpen(true);

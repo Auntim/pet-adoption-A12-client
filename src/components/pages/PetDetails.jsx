@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../provider/AuthProvider";
 
 const fetchPetDetails = async (id) => {
-    const response = await fetch(`http://localhost:5000/pets/${id}`);
+    const response = await fetch(`https://pet-adoption-server-side-teal.vercel.app/pets/${id}`);
     if (!response.ok) {
         throw new Error("Failed to fetch pet details");
     }
@@ -41,7 +41,7 @@ const PetDetails = () => {
         };
 
         try {
-            const response = await fetch("http://localhost:5000/adoptPet", {
+            const response = await fetch("https://pet-adoption-server-side-teal.vercel.app/adoptPet", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

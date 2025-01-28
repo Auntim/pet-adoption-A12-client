@@ -84,19 +84,19 @@ function Register() {
     };
 
     return (
-        <div className="flex justify-center items-center min-h-screen bg-gray-100">
+        <div className="flex dark:bg-medium dark:text-white justify-center items-center min-h-screen bg-gray-100">
             <Helmet>
                 <title>Pet | Registrar</title>
             </Helmet>
             <div className=' rounded-lg p-6'>
                 <Lottie className='h-30 w-30 w-full' animationData={registrationLotti}></Lottie>
             </div>
-            <div className="card bg-gradient-to-r from-violet-500 to-fuchsia-500 w-full text-white max-w-sm my-5 shadow-2xl">
-                <form onSubmit={handleSignUp} className="card-body ">
-                    <h2 className="text-2xl font-bold text-slate-800">Register</h2>
+            <div className="card bg-gradient-to-r dark:bg-medium dark:text-white from-violet-500 to-fuchsia-500 w-full text-white max-w-sm my-5 shadow-2xl">
+                <form onSubmit={handleSignUp} className="card-body dark:bg-medium dark:text-white">
+                    <h2 className="text-2xl font-bold text-slate-800 dark:text-white">Register</h2>
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Name</span>
+                            <span className="label-text dark:text-white">Name</span>
                         </label>
                         <input
                             type="text"
@@ -108,7 +108,7 @@ function Register() {
                     </div>
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Photo Url</span>
+                            <span className="label-text dark:text-white">Photo Url</span>
                         </label>
                         <input
                             type="file"
@@ -121,7 +121,7 @@ function Register() {
                     </div>
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Email</span>
+                            <span className="label-text dark:text-white">Email</span>
                         </label>
                         <input
                             type="email"
@@ -133,7 +133,7 @@ function Register() {
                     </div>
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Password</span>
+                            <span className="label-text dark:text-white">Password</span>
                         </label>
                         <input
                             type="password"
@@ -143,10 +143,10 @@ function Register() {
                             required
                         />
                         <label className="flex justify-center items-center">
-                            <p className="text-center my-1 label-text-alt text-[14px]">
+                            <p className="text-center my-1 label-text-alt text-[14px] dark:text-white">
                                 Already have an Account?{' '}
                                 <span>
-                                    <Link to="/login" className="text-xl font-semibold text-slate-700 hover:underline">
+                                    <Link to="/login" className="text-xl dark:text-white font-semibold text-slate-700 hover:underline">
                                         Login
                                     </Link>
                                 </span>

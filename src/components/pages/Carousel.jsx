@@ -17,7 +17,7 @@ import Slide from '../Slide/Slide'
 
 export default function Carousel() {
     return (
-        <div className='container px-6 py-10 mx-auto'>
+        <div className=' px-6 py-10 mx-auto dark:bg-medium bg-white'>
             <Swiper
                 spaceBetween={30}
                 centeredSlides={true}

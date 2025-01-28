@@ -14,7 +14,7 @@ const PetsListing = ({ limit }) => {
     useEffect(() => {
         const fetchPets = async () => {
             try {
-                const response = await fetch("http://localhost:5000/allpets");
+                const response = await fetch("https://pet-adoption-server-side-teal.vercel.app/allpets");
                 const data = await response.json();
 
                 // Filter only non-adopted pets and sort by date (descending)
@@ -66,7 +66,7 @@ const PetsListing = ({ limit }) => {
     }, [hasMore]);
 
     return (
-        <div className="p-6">
+        <div className="p-6 dark:bg-medium dark:text-white bg-w">
             <h2 className="text-4xl text-center font-bold text-orange-600 mb-6 ">---Available Pets for Adoption---</h2>
 
             {/* Search and Filter */}
@@ -107,6 +107,7 @@ const PetsListing = ({ limit }) => {
                         <h3 className="text-xl font-bold mb-2">{pet.name}</h3>
                         <p className="font-semibold">Age: {pet.age} years</p>
                         <p className="font-semibold">Location: {pet.location}</p>
+                        <p className="font-semibold">Short-Dascription: {pet.shortDescription}</p>
                         <Link to={`/pets/${pet._id}`}>
                             <button
                                 className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
@@ -147,7 +148,7 @@ export default PetsListing;
 //         setLoading(true);
 //         try {
 //             const response = await fetch(
-//                 `http://localhost:5000/allpets?page=${currentPage}&limit=150&category=${currentCategory}`
+//                 `https://pet-adoption-server-side-teal.vercel.app/allpets?page=${currentPage}&limit=150&category=${currentCategory}`
 //             );
 //             const data = await response.json();
 

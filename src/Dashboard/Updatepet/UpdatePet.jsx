@@ -14,7 +14,7 @@ const UpdatePet = () => {
     useEffect(() => {
         const fetchPetData = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/pets/${id}`);
+                const response = await fetch(`https://pet-adoption-server-side-teal.vercel.app/pets/${id}`);
                 const data = await response.json();
                 setPetData(data);
                 // Pre-fill form fields with fetched data
@@ -30,7 +30,7 @@ const UpdatePet = () => {
     const onSubmit = async (data) => {
         const { _id, ...updatedData } = data;
         try {
-            const response = await fetch(`http://localhost:5000/pets/${_id}`, {
+            const response = await fetch(`https://pet-adoption-server-side-teal.vercel.app/pets/${_id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",

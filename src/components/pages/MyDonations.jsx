@@ -13,7 +13,7 @@ const MyDonations = () => {
         const fetchDonations = async () => {
             try {
                 const response = await fetch(
-                    `http://localhost:5000/payments`
+                    `https://pet-adoption-server-side-teal.vercel.app/payments`
                 );
                 const data = await response.json();
                 setDonations(data);
@@ -30,7 +30,7 @@ const MyDonations = () => {
     const handleRefund = async (campaignId) => {
         try {
             const response = await fetch(
-                `http://localhost:5000/payments/${campaignId}/refund`,
+                `https://pet-adoption-server-side-teal.vercel.app/payments/${campaignId}/refund`,
                 {
                     method: "PATCH",
                     headers: {

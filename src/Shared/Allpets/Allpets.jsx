@@ -12,7 +12,7 @@ const AllPets = () => {
     useEffect(() => {
         const fetchPets = async () => {
             try {
-                const response = await fetch("http://localhost:5000/allpets");
+                const response = await fetch("https://pet-adoption-server-side-teal.vercel.app/allpets");
                 const data = await response.json();
                 setPets(data);
             } catch (err) {
@@ -40,7 +40,7 @@ const AllPets = () => {
         }).then(async (result) => {
             if (result.isConfirmed) {
                 try {
-                    const response = await fetch(`http://localhost:5000/pets/${id}`, {
+                    const response = await fetch(`https://pet-adoption-server-side-teal.vercel.app/pets/${id}`, {
                         method: "DELETE",
                     });
                     if (response.ok) {
@@ -61,7 +61,7 @@ const AllPets = () => {
     // Handle toggle adoption status
     const toggleAdoptionStatus = async (id, currentStatus) => {
         try {
-            const response = await fetch(`http://localhost:5000/pets/${id}`, {
+            const response = await fetch(`https://pet-adoption-server-side-teal.vercel.app/pets/${id}`, {
                 method: "PATCH",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ adopted: !currentStatus }),

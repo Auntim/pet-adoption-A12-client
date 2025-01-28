@@ -20,7 +20,7 @@ const DonationDetails = () => {
     useEffect(() => {
         const fetchCampaignDetails = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/donationCampaigns/${id}`);
+                const response = await fetch(`https://pet-adoption-server-side-teal.vercel.app/donationCampaigns/${id}`);
                 const data = await response.json();
                 setCampaign(data);
             } catch (err) {
@@ -117,7 +117,7 @@ const DonationForm = ({ donationAmount, setDonationAmount, closeModal, campaignI
 
         try {
             // Create payment intent on the backend
-            const response = await fetch("http://localhost:5000/create-payment-intent", {
+            const response = await fetch("https://pet-adoption-server-side-teal.vercel.app/create-payment-intent", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

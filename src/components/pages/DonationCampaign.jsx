@@ -13,7 +13,7 @@ const DonationCampaign = () => {
 
         try {
             const response = await fetch(
-                `http://localhost:5000/alldonationCampaigns?page=${page}&limit=6`
+                `https://pet-adoption-server-side-teal.vercel.app/alldonationCampaigns?page=${page}&limit=6`
             );
             const data = await response.json();
 
@@ -51,7 +51,7 @@ const DonationCampaign = () => {
     }, []);
 
     return (
-        <div className="p-8">
+        <div className="p-8 dark:bg-medium dark:text-white">
             <h2 className="text-4xl text-center font-bold text-orange-600 mb-6 ">--- Donation Campaign---</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {campaigns.map((campaign) => (
@@ -66,10 +66,10 @@ const DonationCampaign = () => {
                         />
                         <h2 className="text-lg font-semibold mt-3">{campaign.petName}</h2>
                         <p className="text-sm text-gray-600">
-                            <span className="font-bold">Max Donation:</span> ${campaign.maxDonation}
+                            <span className="font-bold  dark:text-white">Max Donation:</span> ${campaign.maxDonation}
                         </p>
                         <p className="text-sm text-gray-600">
-                            <span className="font-bold">Donated:</span> ${campaign.donatedAmount}
+                            <span className="font-bold  dark:text-white">Donated:</span> ${campaign.donatedAmount}
                         </p>
 
                         <Link to={`/donationCampaigns/${campaign._id}`}>
