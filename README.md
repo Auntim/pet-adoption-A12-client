@@ -31,7 +31,7 @@ Authentication: Firebase
 Payments: Stripe Integration
 
 
-# Pet-Adoption
+# Get Started
 git clone https://github.com/your-repo.git
 cd pet-adoption
 npm install
