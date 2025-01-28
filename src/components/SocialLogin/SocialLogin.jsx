@@ -32,9 +32,9 @@ function SocialLogin() {
         <div>
             <button
                 onClick={handleGoogleLogin}
-                className="btn btn-outline w-full flex items-center justify-center gap-2 text-xl"
+                className="btn btn-outline w-full flex items-center dark:text-white justify-center gap-2 text-xl"
             >
-                <FaGoogle className="w-5 h-5" />
+                <FaGoogle className="w-5 h-5 dark:text-white " />
                 Sign in with Google
             </button>
 

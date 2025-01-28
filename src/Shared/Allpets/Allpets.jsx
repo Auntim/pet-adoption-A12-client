@@ -91,7 +91,7 @@ const AllPets = () => {
                 <div className="overflow-x-auto">
                     <table className="min-w-full table-auto border-collapse border border-gray-300">
                         <thead>
-                            <tr className="bg-gray-100">
+                            <tr className="bg-gray-100 dark:text-black">
                                 <th className="border border-gray-300 px-4 py-2">Image</th>
                                 <th className="border border-gray-300 px-4 py-2">Name</th>
                                 <th className="border border-gray-300 px-4 py-2">Age</th>

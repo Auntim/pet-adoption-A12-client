@@ -67,7 +67,7 @@ const AllUsers = () => {
                 <h2 className="text-3xl">Total Users: {users.length}</h2>
             </div>
             <div className="overflow-x-auto">
-                <table className="table table-zebra w-full">
+                <table className="table table-zebra w-full dark:bg-medium dark:text-pink-600">
                     {/* head */}
                     <thead>
                         <tr>
@@ -81,9 +81,9 @@ const AllUsers = () => {
                     <tbody>
                         {
                             users.map((user, index) => <tr key={user._id}>
-                                <th>{index + 1}</th>
-                                <td>{user.name}</td>
-                                <td>{user.email}</td>
+                                <th className="text-[16px] font-semibold">{index + 1}</th>
+                                <td className="text-[16px] font-semibold">{user.name}</td>
+                                <td className="text-[16px] font-semibold">{user.email}</td>
                                 <td>
                                     {user.role === 'admin' ? 'Admin' : <button
                                         onClick={() => handleMakeAdmin(user)}

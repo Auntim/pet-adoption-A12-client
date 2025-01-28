@@ -71,7 +71,7 @@ function Login() {
                 <Lottie className='' animationData={loginLotti}></Lottie>
             </div>
             <div className="card p-6 w-3/5 dark:bg-medium dark:text-white max-w-sm shadow-2xl bg-gradient-to-r from-violet-500 to-fuchsia-500">
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 card-body">
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 card-body ">
                     <h2 className="text-3xl font-bold mb-4">Login</h2>
                     <div>
                         <label className="block text-xl font-medium mb-1">Email</label>

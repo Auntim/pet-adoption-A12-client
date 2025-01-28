@@ -41,8 +41,8 @@ const Navbar = () => {
 
 
     return (
-        <nav className="bg-gradient-to-r dark:bg-dark from-violet-500 to-fuchsia-500 text-white">
-            <div className="container dark:bg-dark mx-auto flex justify-between items-center py-4 px-6">
+        <nav className="bg-gradient-to-r dark:bg-medium dark:text-white from-violet-500 to-fuchsia-500 text-white">
+            <div className=" dark:bg-dark mx-auto flex justify-between items-center py-4 px-6">
                 <Link to="/" className="flex items-center text-5xl font-bold text-red-400 uppercase">
                     <img className="h-12 w-12 rounded-full" src={logo} alt="" />
 

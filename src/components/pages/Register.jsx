@@ -91,8 +91,8 @@ function Register() {
             <div className=' rounded-lg p-6'>
                 <Lottie className='h-30 w-30 w-full' animationData={registrationLotti}></Lottie>
             </div>
-            <div className="card bg-gradient-to-r dark:bg-medium dark:text-white from-violet-500 to-fuchsia-500 w-full text-white max-w-sm my-5 shadow-2xl">
-                <form onSubmit={handleSignUp} className="card-body dark:bg-medium dark:text-white">
+            <div className="card bg-gradient-to-r dark:bg-medium dark:text-white from-violet-500 to-fuchsia-500 w-full text-white max-w-sm my-5 shadow-xl">
+                <form onSubmit={handleSignUp} className="card-body dark:border-2 dark:rounded-md dark:bg-medium dark:text-white">
                     <h2 className="text-2xl font-bold text-slate-800 dark:text-white">Register</h2>
                     <div className="form-control">
                         <label className="label">

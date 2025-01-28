@@ -66,7 +66,7 @@ const MyDonations = () => {
             ) : (
                 <table className="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
                     <thead>
-                        <tr className="bg-gray-100 text-left">
+                        <tr className="bg-gray-100 text-left dark:text-white">
                             <th className="px-6 py-3 text-sm font-medium text-gray-700">
                                 Pet Image
                             </th>

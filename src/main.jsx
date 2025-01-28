@@ -37,6 +37,7 @@ import AllUsers from './Dashboard/AllUser/AllUsers';
 import PaymentHistory from './components/pages/PaymentHistory';
 import MyDonations from './components/pages/MyDonations';
 import AdminHome from './Dashboard/UserPage/AdminHome';
+import Myservice from './Dashboard/UserPage/Myservice';
 
 const router = createBrowserRouter([
   {
@@ -125,6 +126,10 @@ const router = createBrowserRouter([
       {
         path: 'adminHome',
         Element: <AdminHome></AdminHome>
+      },
+      {
+        path: 'history',
+        element: <Myservice></Myservice>
       }
 
 

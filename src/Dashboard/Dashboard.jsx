@@ -20,10 +20,10 @@ const Dashboard = () => {
     // const isAdmin = true;
 
     return (
-        <div className="flex">
+        <div className="flex dark:bg-medium dark:text-white">
             {/* dashboard side bar */}
-            <div className="w-64 min-h-screen bg-orange-400">
-                <ul className="menu p-4">
+            <div className="w-64 min-h-screen bg-orange-400 dark:bg-stone-500 dark:text-white">
+                <ul className="menu p-4 ">
                     {
                         isAdmin ? <>
                             <li>
@@ -90,7 +90,7 @@ const Dashboard = () => {
                     }
                     {/* shared nav links */}
                     <div className="divider"></div>
-                    <li>
+                    <li className="">
                         <NavLink to="/">
                             <FaHome></FaHome>
                             Home</NavLink>
