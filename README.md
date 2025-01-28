@@ -24,19 +24,19 @@ Discover and adopt your perfect pet companion! Our Pet Adoption platform simplif
 7-Payment Integration: Securely process donations with a seamless experience.
 
 # Teck-Stack
-Frontend: React, Tailwind CSS, DaisyUI
-Backend: Node.js, Express.js
-Database: MongoDB Atlas
-Authentication: Firebase
-Payments: Stripe Integration
+1-Frontend: React, Tailwind CSS, DaisyUI
+2-Backend: Node.js, Express.js
+3-Database: MongoDB Atlas
+4-Authentication: Firebase
+5-Payments: Stripe Integration
 
 
 # Get Started
-git clone https://github.com/your-repo.git
-cd pet-adoption
-npm install
-Frontent:npm run dev
-Backend:nodemon index.js
+1-git clone https://github.com/your-repo.git
+2-cd pet-adoption
+3-npm install
+4-Frontent:npm run dev
+5-Backend:nodemon index.js
 
 
 
