@@ -36,7 +36,7 @@ const Navbar = () => {
 
     return (
         <nav className="bg-gradient-to-r dark:bg-medium dark:text-white from-violet-500 to-fuchsia-500 text-white">
-            <div className="mx-auto flex dark:bg-medium dark:text-white justify-between items-center py-4 px-6">
+            <div className="mx-auto flex dark:bg-medium dark:border-b-2 dark:text-white justify-between items-center py-4 px-6">
                 {/* Logo */}
                 <Link to="/" className="flex items-center text-5xl font-bold text-red-400 uppercase">
                     <img className="h-12 w-12 rounded-full" src={logo} alt="Logo" />
@@ -147,11 +147,11 @@ const Navbar = () => {
 
             {/* Mobile Dropdown Menu */}
             {isMenuOpen && (
-                <ul className="md:hidden bg-violet-600 space-y-4 p-4">
+                <ul className="md:hidden  dark:bg-gray-600 bg-violet-600 space-y-4 p-4">
                     <li>
                         <NavLink
                             to="/"
-                            className="block text-lg font-semibold hover:bg-blue-300 p-2 rounded-lg"
+                            className="block text-xl font-semibold hover:bg-blue-300 p-2 rounded-lg"
                             onClick={() => setIsMenuOpen(false)}
                         >
                             Home
@@ -160,7 +160,7 @@ const Navbar = () => {
                     <li>
                         <NavLink
                             to="/allpets"
-                            className="block text-lg font-semibold hover:bg-blue-300 p-2 rounded-lg"
+                            className="block text-xl font-semibold hover:bg-blue-300 p-2 rounded-lg"
                             onClick={() => setIsMenuOpen(false)}
                         >
                             Pet-Listening
@@ -169,7 +169,7 @@ const Navbar = () => {
                     <li>
                         <NavLink
                             to="/alldonationCampaigns"
-                            className="block text-lg font-semibold hover:bg-blue-300 p-2 rounded-lg"
+                            className="block text-xl font-semibold hover:bg-blue-300 p-2 rounded-lg"
                             onClick={() => setIsMenuOpen(false)}
                         >
                             Donation

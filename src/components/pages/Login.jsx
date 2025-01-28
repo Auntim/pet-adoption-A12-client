@@ -63,12 +63,12 @@ function Login() {
     };
 
     return (
-        <div className="flex justify-center dark:bg-medium dark:text-white  items-center min-h-screen gap-4  bg-base-100">
+        <div className="flex  justify-center dark:bg-medium dark:text-white  items-center min-h-screen gap-4  bg-base-100">
             <Helmet>
                 <title>Pet | Login</title>
             </Helmet>
-            <div className='w-2/5  bg-base-100 rounded-lg p-6'>
-                <Lottie className='' animationData={loginLotti}></Lottie>
+            <div className='hidden md:flex w-2/5  bg-base-100 rounded-lg '>
+                <Lottie className='dark:bg-medium dark:text-white' animationData={loginLotti}></Lottie>
             </div>
             <div className="card p-6 w-3/5 dark:bg-medium dark:text-white max-w-sm shadow-2xl bg-gradient-to-r from-violet-500 to-fuchsia-500">
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 card-body ">

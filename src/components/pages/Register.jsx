@@ -88,7 +88,7 @@ function Register() {
             <Helmet>
                 <title>Pet | Registrar</title>
             </Helmet>
-            <div className=' rounded-lg p-6'>
+            <div className='hidden md:flex rounded-lg p-6'>
                 <Lottie className='h-30 w-30 w-full' animationData={registrationLotti}></Lottie>
             </div>
             <div className="card bg-gradient-to-r dark:bg-medium dark:text-white from-violet-500 to-fuchsia-500 w-full text-white max-w-sm my-5 shadow-xl">
