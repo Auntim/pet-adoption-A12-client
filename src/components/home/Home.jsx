@@ -4,6 +4,9 @@ import Carousel from '../pages/Carousel'
 import CTASection from '../../Shared/CTASection'
 import AboutUs from '../../Shared/AboutUs'
 import PetsListing from '../pages/PetsListing'
+import Reviews from '../pages/Reviews'
+import ContactUs from '../pages/ContactUs'
+import Accordian from '../pages/Accordian'
 
 function Home() {
     return (
@@ -21,8 +24,17 @@ function Home() {
             <section>
                 <CTASection></CTASection>
             </section>
-            <section className='mt-6'>
+            <section className=''>
                 <AboutUs></AboutUs>
+            </section>
+            <section>
+                <Reviews />
+            </section>
+            <section>
+                <ContactUs />
+            </section>
+            <section>
+                <Accordian />
             </section>
 
         </div>

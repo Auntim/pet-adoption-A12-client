@@ -70,8 +70,8 @@ function Login() {
             <div className='hidden md:flex w-2/5  bg-base-100 rounded-lg '>
                 <Lottie className='dark:bg-medium dark:text-white' animationData={loginLotti}></Lottie>
             </div>
-            <div className="card p-6 w-3/5 dark:bg-medium dark:text-white max-w-sm shadow-2xl bg-gradient-to-r from-violet-500 to-fuchsia-500">
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 card-body ">
+            <div className="card p-6 w-3/5 max-w-sm  shadow-2xl dark:bg-medium bg-gradient-to-r from-violet-500 to-fuchsia-500">
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 card-body">
                     <h2 className="text-3xl font-bold mb-4">Login</h2>
                     <div>
                         <label className="block text-xl font-medium mb-1">Email</label>
@@ -126,9 +126,9 @@ function Login() {
                 {/* Google Sign-In Button */}
                 <button
                     onClick={handleGoogleLogin}
-                    className="btn btn-outline w-full flex items-center justify-center gap-2 text-xl"
+                    className="btn btn-outline w-full flex items-center justify-center gap-2 text-[14px] md:text-xl"
                 >
-                    <FaGoogle className="w-5 h-5" />
+                    <FaGoogle className="w-3 h-3 md:w-5 md:h-5" />
                     Sign in with Google
                 </button>
             </div>

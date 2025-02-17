@@ -23,7 +23,7 @@ const Slide = ({ image, text }) => {
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.9 }}
                             transition={{ duration: 0.2 }}
-                            className='w-full  px-5 py-4 mt-4 text-sm font-medium text-white capitalize transition-colors duration-300 transform bg-violet-600 rounded-md lg:w-auto hover:bg-gray-500 focus:outline-none focus:bg-gray-500'
+                            className='w-30 md:w-full  px-5 py-4 mt-4 text-sm font-medium text-black hover:text-white capitalize transition-colors duration-300 transform bg-violet-600 rounded-md lg:w-auto hover:bg-gray-700 focus:outline-none focus:bg-gray-500'
                         >Want More
                         </motion.button>
                     </Link>

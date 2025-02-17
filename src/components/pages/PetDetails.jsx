@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import toast from "react-hot-toast";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../provider/AuthProvider";
+import LoadingSpinner from "../../Shared/LoadingSpinner";
 
 const fetchPetDetails = async (id) => {
     const response = await fetch(`https://pet-adoption-server-side-teal.vercel.app/pets/${id}`);
@@ -61,33 +62,33 @@ const PetDetails = () => {
         }
     };
 
-    if (isLoading) return <p>Loading pet details...</p>;
+    if (isLoading) return <LoadingSpinner />;
     if (isError) return <p>Error: {error.message}</p>;
 
     return (
-        <div className="p-6">
+        <div className="p-6 dark:bg-medium py-12">
             <Helmet>
                 <title>Paw | Pet-Details</title>
             </Helmet>
             {/* Pet Details */}
             {pet && (
-                <div className="max-w-2xl mx-auto bg-white shadow-lg rounded-lg p-6">
+                <div className="max-w-2xl mx-auto bg-white shadow-lg rounded-lg p-6 dark:bg-medium mt-12 border-2">
                     <img
                         src={pet.image}
                         alt={pet.name}
                         className="w-full h-64 object-cover rounded-lg mb-4"
                     />
-                    <h2 className="text-2xl font-bold mb-2">{pet.name}</h2>
-                    <p className="mb-2">
+                    <h2 className="text-2xl font-bold mb-2 dark:text-white">{pet.name}</h2>
+                    <p className="mb-2 dark:text-white">
                         <strong>Age:</strong> {pet.age} years
                     </p>
-                    <p className="mb-2">
+                    <p className="mb-2 dark:text-white">
                         <strong>Category:</strong> {pet.category}
                     </p>
-                    <p className="mb-2">
+                    <p className="mb-2 dark:text-white">
                         <strong>Location:</strong> {pet.location}
                     </p>
-                    <p className="mb-4">
+                    <p className="mb-4 dark:text-white">
                         <strong>Description:</strong> {pet.longDescription}
                     </p>
                     <button

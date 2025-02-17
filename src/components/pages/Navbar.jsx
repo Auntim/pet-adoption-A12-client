@@ -12,7 +12,7 @@ import ToggleDark from "../provider/ToggleDark";
 const Navbar = () => {
     const { user, logout } = useContext(AuthContext);
     const navigate = useNavigate();
-    const [isMenuOpen, setIsMenuOpen] = useState(false); // State for hamburger menu
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const handleLogout = async () => {
         try {
@@ -35,7 +35,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="bg-gradient-to-r dark:bg-medium dark:text-white from-violet-500 to-fuchsia-500 text-white">
+        <nav className="fixed w-full z-50 top-0 bg-gradient-to-r dark:bg-medium dark:text-white from-violet-500 to-fuchsia-500 text-white">
             <div className="mx-auto flex dark:bg-medium dark:border-b-2 dark:text-white justify-between items-center py-4 px-6">
                 {/* Logo */}
                 <Link to="/" className="flex items-center text-5xl font-bold text-red-400 uppercase">
@@ -125,7 +125,7 @@ const Navbar = () => {
                 </div>
 
                 {/* Dark Mode Toggle */}
-                <div className="rounded ml-3 bg-gray-200 dark:bg-gray-800">
+                <div className="rounded ml-3 mr-2 bg-gray-200 dark:bg-gray-800">
                     <ToggleDark />
                 </div>
 

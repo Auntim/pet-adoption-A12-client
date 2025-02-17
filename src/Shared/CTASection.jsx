@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const CTASection = () => {
     return (
         <section className="relative dark:bg-medium dark:text-white   py-16 px-6 md:px-12 lg:px-20">
-            <h2 className="text-5xl text-center font-bold text-orange-600 mb-8 ">---Adopt a Pets---</h2>
+            <h2 className="text-2xl md:text-5xl text-center font-bold text-orange-600 mb-8 dark:text-white">---Adopt a Pets---</h2>
             <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
                 {/* Left Content */}
                 <div className="flex-1 text-center lg:text-left">

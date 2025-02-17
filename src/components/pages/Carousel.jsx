@@ -9,7 +9,7 @@ import 'swiper/css/navigation'
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules'
 
-import bgimg1 from "../../assets/images/carousel1.jpeg";
+import bgimg1 from "../../assets/images/rabbit-1.jpg";
 import bgimg2 from "../../assets/images/carousel2.jpeg";
 import bgimg3 from "../../assets/images/carousel3.jpeg";
 import Slide from '../Slide/Slide'
@@ -17,7 +17,7 @@ import Slide from '../Slide/Slide'
 
 export default function Carousel() {
     return (
-        <div className=' px-6 py-10 mx-auto dark:bg-medium bg-white'>
+        <div className='mt-10  py-10 mx-auto dark:bg-medium bg-white'>
             <Swiper
                 spaceBetween={30}
                 centeredSlides={true}

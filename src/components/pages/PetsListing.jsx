@@ -71,17 +71,20 @@ const PetsListing = ({ limit }) => {
             <Helmet>
                 <title>Pet | Pet-Linting</title>
             </Helmet>
-            <h2 className="text-4xl text-center font-bold text-orange-600 mb-6 ">---Available Pets for Adoption---</h2>
+            <h2 className="text-2xl md:text-5xl dark:text-white text-center font-bold text-orange-600 mb-6 ">---Available Pets for Adoption---</h2>
 
             {/* Search and Filter */}
-            <div className="flex justify-between items-center mb-6">
-                <input
-                    type="text"
-                    placeholder="Search by name"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="border border-gray-300 rounded px-4 py-2 w-1/2"
-                />
+            <div className="flex container mx-auto justify-between items-center mb-6">
+                <div className="flex gap-1">
+                    <input
+                        type="text"
+                        placeholder="Search by name"
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        className="border border-gray-500 rounded px-4 py-2 w-3/4"
+                    />
+                    <button className="btn px-3 py-2 bg-blue-400">Search</button>
+                </div>
                 <select
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
@@ -114,7 +117,7 @@ const PetsListing = ({ limit }) => {
                         <p className="font-semibold">Short-Dascription: {pet.shortDescription}</p>
                         <Link to={`/pets/${pet._id}`}>
                             <button
-                                className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+                                className="mt-4 px-4 py-2 btn btn-outline text-black dark:text-white rounded "
                             >
                                 View Details
                             </button>

@@ -9,7 +9,7 @@ const DonationCampaign = () => {
     const [loading, setLoading] = useState(false);
 
     const fetchCampaigns = async () => {
-        if (loading) return;
+        if (loading) return <LoadingSpinner />;
         setLoading(true);
 
         try {
@@ -56,7 +56,7 @@ const DonationCampaign = () => {
             <Helmet>
                 <title>Pet | Donation</title>
             </Helmet>
-            <h2 className="text-4xl text-center font-bold text-orange-600 mb-6 ">--- Donation Campaign---</h2>
+            <h2 className="text-4xl text-center font-bold text-orange-600 mb-6 mt-16">--- Donation Campaign---</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {campaigns.map((campaign) => (
                     <div
@@ -70,7 +70,7 @@ const DonationCampaign = () => {
                         />
                         <h2 className="text-lg font-semibold mt-3">{campaign.petName}</h2>
                         <p className="text-sm text-gray-600">
-                            <span className="font-bold  dark:text-white">Max Donation:</span> ${campaign.maxDonation}
+                            <span className="font-bold  dark:text-white ">Max Donation:</span> ${campaign.maxDonation}
                         </p>
                         <p className="text-sm text-gray-600">
                             <span className="font-bold  dark:text-white">Donated:</span> ${campaign.donatedAmount}
