@@ -2,6 +2,8 @@ import React, { useContext } from 'react'
 import { AuthContext } from '../../components/provider/AuthProvider'
 import { Helmet } from 'react-helmet-async';
 import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
+import { MdDashboard } from "react-icons/md";
+import ToggleDark from '../../components/provider/ToggleDark';
 
 
 function UserHome() {
@@ -26,6 +28,27 @@ function UserHome() {
             <Helmet>
                 <title>Pet | UserHome</title>
             </Helmet>
+            <nav className=" bg-white dark:bg-gray-800 shadow-md fixed w-full top-0 left-0 z-10 px-6 py-4 flex justify-between items-center">
+                {/* Logo */}
+                <div className="flex items-center space-x-3">
+                    <MdDashboard className="text-blue-500 text-3xl" />
+                    <h1 className="text-xl font-bold text-gray-700 dark:text-white">User Dashboard</h1>
+                </div>
+
+                {/* Profile */}
+                <div className="flex items-center space-x-4">
+                    <span className="text-gray-600 dark:text-gray-300">{user.displayName}</span>
+                    <img
+                        className="rounded-full h-10 w-10 border-2 border-yellow-500 cursor-pointer"
+                        referrerPolicy="no-referrer"
+                        src={user && user.photoURL ? user.photoURL : avatarImg}
+                        alt="profile"
+                    />
+
+                    <ToggleDark />
+                </div>
+            </nav>
+
             <h2 className='text-3xl text-center text-orange-600 font-semibold'>
                 <span>Hi, Welcome </span>
                 {
