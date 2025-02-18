@@ -7,6 +7,7 @@ import PetsListing from '../pages/PetsListing'
 import Reviews from '../pages/Reviews'
 import ContactUs from '../pages/ContactUs'
 import Accordian from '../pages/Accordian'
+import Adoption from '../pages/Adoption'
 
 function Home() {
     return (
@@ -26,6 +27,9 @@ function Home() {
             </section>
             <section className=''>
                 <AboutUs></AboutUs>
+            </section>
+            <section className=''>
+                <Adoption></Adoption>
             </section>
             <section>
                 <Reviews />

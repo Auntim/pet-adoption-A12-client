@@ -3,13 +3,13 @@ import { Link } from "react-router-dom"
 // import logo from '../assets/images/logo.png'
 const Footer = () => {
     return (
-        <footer className='bg-gradient-to-r from-violet-600 to-fuchsia-700 text-white shadow-sm'>
+        <footer className='bg-gradient-to-r from-violet-600 to-fuchsia-700 text-white shadow-sm dark:from-gray-900 dark:to-gray-800'>
             <hr />
             <div className='container px-6 py-8 mx-auto'>
                 <div className='flex flex-col items-center text-center'>
                     <div className='flex gap-2 items-center'>
                         <img className='w-auto h-7' src='' alt='' />
-                        <Link to="/" className="text-3xl font-bold text-gray-700 uppercase">
+                        <Link to="/" className="dark:text-white text-3xl font-bold text-gray-700 uppercase">
                             PAWS
                         </Link>
                     </div>
@@ -65,7 +65,7 @@ const Footer = () => {
                 <hr className='my-6 border-gray-200 md:my-10 ' />
 
                 <div className='flex flex-col items-center sm:flex-row sm:justify-between'>
-                    <p className='text-xl text-black '>
+                    <p className='text-xl text-black dark:text-white'>
                         © Copyright 2021. All Rights Reserved.
                     </p>
 

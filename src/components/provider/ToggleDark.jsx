@@ -24,17 +24,17 @@ function ToggleDark() {
     }, [darkmode])
 
     return (
-        <div className="relative w-16 h-8 flex items-center dark:bg-gray-800 bg-violet-500 cursor-pointer rounded-full p-1.5"
+        <div className="relative w-16 h-8 flex items-center dark:bg-gray-800  cursor-pointer rounded-full p-1"
             onClick={() => setDarkmode(!darkmode)}>
             <FaMoon
                 className={`text-white rounded-full transition-opacity duration-300 ${darkmode ? 'opacity-100' : 'opacity-0'}`}
                 size={18}
-            />            <div className="absolute bd-white  w-6 h-6 rounded-full sha transform transition-transform duration-300"
+            />            <div className="absolute bd-white  w-6 h-6 rounded-full shadow-sm transform transition-transform duration-300"
                 style={darkmode ? { left: '2px' } : { right: '2px' }}>
 
             </div>
             <BsSunFill
-                className={`ml-auto text-yellow-400 transition-opacity duration-300 ${darkmode ? 'opacity-0' : 'opacity-100'}`}
+                className={`ml-auto text-black transition-opacity duration-300 ${darkmode ? 'opacity-0' : 'opacity-100'}`}
                 size={18}
             />
 
