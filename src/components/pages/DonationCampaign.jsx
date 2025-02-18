@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
+import LoadingSpinner from "../../Shared/LoadingSpinner";
+
 
 const DonationCampaign = () => {
     const [campaigns, setCampaigns] = useState([]);
@@ -84,7 +86,7 @@ const DonationCampaign = () => {
                     </div>
                 ))}
             </div>
-            {loading && <p className="text-center mt-4">Loading...</p>}
+            {loading && <p className="text-center mt-4"><LoadingSpinner /></p>}
             {!hasMore && (
                 <p className="text-center mt-4 text-gray-500">
                     No more campaigns to load.
