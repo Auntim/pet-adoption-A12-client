@@ -125,7 +125,7 @@ const Navbar = () => {
                 </div>
 
                 {/* Dark Mode Toggle */}
-                <div className="rounded ml-3 mr-2 bg-gray-200 dark:bg-gray-800">
+                <div className="rounded ml-3 mr-2  ">
                     <ToggleDark />
                 </div>
 

@@ -11,9 +11,9 @@ import { Helmet } from "react-helmet-async";
 
 
 const Dashboard = () => {
-    
 
-   
+
+
     const [isAdmin] = useAdmin();
     // const isAdmin = true;
 
@@ -23,7 +23,7 @@ const Dashboard = () => {
                 <title>Pet | Dashboard</title>
             </Helmet>
             {/* dashboard side bar */}
-            <div className="w-64 min-h-screen bg-orange-400 dark:bg-stone-500 dark:text-white">
+            <div className="w-64 min-h-screen bg-orange-400 dark:bg-stone-500 dark:text-white mt-16">
                 <ul className="menu p-4 ">
                     {
                         isAdmin ? <>

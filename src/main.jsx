@@ -125,7 +125,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'adminHome',
-        Element: <AdminHome></AdminHome>
+        element: <AdminHome></AdminHome>
       },
       {
         path: 'history',
