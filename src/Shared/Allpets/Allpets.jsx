@@ -4,6 +4,7 @@ import toast from "react-hot-toast";
 import { FaPen, FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import LoadingSpinner from "../LoadingSpinner";
 
 const AllPets = () => {
     const [pets, setPets] = useState([]);
@@ -27,8 +28,6 @@ const AllPets = () => {
     }, []);
 
     // Handle delete pet
-
-
     const handleDelete = async (id) => {
         Swal.fire({
             title: "Are you sure?",
@@ -90,7 +89,7 @@ const AllPets = () => {
             </Helmet>
             <h2 className="text-2xl lg:text-4xl text-center font-bold text-orange-600 mb-6 ">--- All Added Pets are here---</h2>
             {loading ? (
-                <p>Loading...</p>
+                <p><LoadingSpinner /> </p>
             ) : (
                 <div className="overflow-x-auto">
                     <table className="min-w-full table-auto  ">
