@@ -32,7 +32,7 @@ function UserHome() {
                     user?.displayName ? user.displayName : 'Back'
                 }
             </h2>
-            <p className="text-gray-600 text-xl text-center my-6">Find your next furry friend and make a difference today.</p>
+            <p className="text-gray-600 text-xl text-center my-6 dark:text-white">Find your next furry friend and make a difference today.</p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                 <div className="bg-blue-500 text-white p-6 rounded-lg shadow-md">
@@ -79,6 +79,35 @@ function UserHome() {
                     <p className="text-white">Get answers</p>
                 </a>
             </div>
+
+            <div className="flex flex-col md:flex-row gap-6 justify-center items-center p-6 bg-gray-100 dark:bg-medium pt-6">
+                <div className="bg-white shadow-lg rounded-2xl p-4">
+                    <h2 className="text-xl font-semibold text-center mb-4 dark:text-white">Adoption Status Distribution</h2>
+                    <PieChart width={300} height={300}>
+                        <Pie data={adoptionData} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={100}>
+                            {adoptionData.map((entry, index) => (
+                                <Cell key={`cell-${index}`} fill={entry.color} />
+                            ))}
+                        </Pie>
+                        <Tooltip />
+                        <Legend />
+                    </PieChart>
+                </div>
+
+                <div className="bg-white shadow-lg rounded-2xl p-4">
+                    <h2 className="text-xl font-semibold text-center mb-4 dark:text-white">Pet Type Distribution</h2>
+                    <PieChart width={300} height={300}>
+                        <Pie data={petTypeData} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={100}>
+                            {petTypeData.map((entry, index) => (
+                                <Cell key={`cell-${index}`} fill={entry.color} />
+                            ))}
+                        </Pie>
+                        <Tooltip />
+                        <Legend />
+                    </PieChart>
+                </div>
+            </div>
+
         </div>
 
 

@@ -4,8 +4,7 @@ function AdminHome() {
         <div>
             <h2 className='text-3xl text-orange-600 text-center font-semibold'>
 
-                Hi, Welcome Back
-            </h2>
+                Welcome to the Admin Dashboard </h2>
         </div>
     )
 }

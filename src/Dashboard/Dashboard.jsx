@@ -1,6 +1,5 @@
 import { FaBook, FaCalendar, FaHome, FaList, FaShoppingCart, FaUsers, FaUtensils } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
-// import useCart from "../hooks/useCart";
 import { MdOutlinePets } from "react-icons/md";
 import { BiSolidDonateBlood } from "react-icons/bi";
 import { IoAddSharp } from "react-icons/io5";
@@ -11,12 +10,10 @@ import { Helmet } from "react-helmet-async";
 
 
 
-
-
 const Dashboard = () => {
-    // const [cart] = useCart();
+    
 
-    // TODO: get isAdmin value from the database
+   
     const [isAdmin] = useAdmin();
     // const isAdmin = true;
 
