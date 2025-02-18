@@ -63,14 +63,14 @@ function Login() {
     };
 
     return (
-        <div className="flex  justify-center dark:bg-medium dark:text-white  items-center min-h-screen gap-4  bg-base-100">
+        <div className="flex  justify-center dark:bg-medium dark:text-white  items-center min-h-screen gap-4  bg-base-100 mt-12">
             <Helmet>
                 <title>Pet | Login</title>
             </Helmet>
             <div className='hidden md:flex w-2/5  bg-base-100 rounded-lg '>
                 <Lottie className='dark:bg-medium dark:text-white' animationData={loginLotti}></Lottie>
             </div>
-            <div className="card p-6 w-3/5 max-w-sm  shadow-2xl dark:bg-medium bg-gradient-to-r from-violet-500 to-fuchsia-500">
+            <div className="card p-6  max-w-sm  shadow-2xl bg-gradient-to-r from-violet-500 to-fuchsia-500 dark:from-gray-800 dark:to-black">
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 card-body">
                     <h2 className="text-3xl font-bold mb-4">Login</h2>
                     <div>
@@ -79,7 +79,7 @@ function Login() {
                             type="email"
                             name="email"
                             placeholder="Enter your email"
-                            className={`input input-bordered w-full ${errors.email ? 'border-red-500' : ''}`}
+                            className={`input input-bordered w-full text-black${errors.email ? 'border-red-500' : ''}`}
                             {...register('email', {
                                 required: 'Email is required',
                                 pattern: {
@@ -99,7 +99,7 @@ function Login() {
                             type="password"
                             name="password"
                             placeholder="Enter your password"
-                            className={`input input-bordered w-full ${errors.password ? 'border-red-500' : ''}`}
+                            className={`input input-bordered w-full text-black${errors.password ? 'border-red-500' : ''}`}
                             {...register('password', {
                                 required: 'Password is required',
                                 minLength: {
@@ -126,9 +126,9 @@ function Login() {
                 {/* Google Sign-In Button */}
                 <button
                     onClick={handleGoogleLogin}
-                    className="btn btn-outline w-full flex items-center justify-center gap-2 text-[14px] md:text-xl"
+                    className="btn btn-outline w-full flex items-center justify-center gap-2 text-[14px] md:text-xl dark:text-white"
                 >
-                    <FaGoogle className="w-3 h-3 md:w-5 md:h-5" />
+                    <FaGoogle className="w-3 h-3 md:w-5 md:h-5 dark:text-white" />
                     Sign in with Google
                 </button>
             </div>

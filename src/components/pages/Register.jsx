@@ -84,15 +84,15 @@ function Register() {
     };
 
     return (
-        <div className="flex dark:bg-medium dark:text-white justify-center items-center min-h-screen bg-gray-100">
+        <div className="flex dark:bg-medium dark:text-white justify-center items-center min-h-screen bg-gray-100 mt-16">
             <Helmet>
                 <title>Pet | Registrar</title>
             </Helmet>
             <div className='hidden md:flex rounded-lg p-6'>
                 <Lottie className='h-30 w-30 w-full' animationData={registrationLotti}></Lottie>
             </div>
-            <div className="card bg-gradient-to-r dark:bg-medium dark:text-white from-violet-500 to-fuchsia-500 w-full text-white max-w-sm my-5 shadow-xl">
-                <form onSubmit={handleSignUp} className="card-body dark:border-2 dark:rounded-md dark:bg-medium dark:text-white">
+            <div className="card bg-gradient-to-r  dark:text-white from-violet-500 to-fuchsia-500 w-full text-white max-w-sm my-5 shadow-xl dark:from-gray-800 dark:to-black">
+                <form onSubmit={handleSignUp} className="card-body  dark:rounded-md dark:from-gray-800 dark:to-black dark:text-white">
                     <h2 className="text-2xl font-bold text-slate-800 dark:text-white">Register</h2>
                     <div className="form-control">
                         <label className="label">
@@ -102,7 +102,7 @@ function Register() {
                             type="text"
                             placeholder="name"
                             name="name"
-                            className="input input-bordered"
+                            className="input input-bordered text-black"
                             required
                         />
                     </div>
@@ -127,7 +127,7 @@ function Register() {
                             type="email"
                             placeholder="email"
                             name="email"
-                            className="input input-bordered"
+                            className="input input-bordered text-black"
                             required
                         />
                     </div>
@@ -139,7 +139,7 @@ function Register() {
                             type="password"
                             placeholder="password"
                             name="password"
-                            className="input input-bordered"
+                            className="input input-bordered text-black"
                             required
                         />
                         <label className="flex justify-center items-center">
