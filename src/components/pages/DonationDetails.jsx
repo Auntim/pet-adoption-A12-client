@@ -49,9 +49,9 @@ const DonationDetails = () => {
 
     return (
         <Elements stripe={stripePromise}>
-            <div className="p-8">
+            <div className="pt-12 dark:bg-medium dark:text-white">
                 <h1 className="text-3xl font-bold text-center mb-6">{campaign.petName}</h1>
-                <div className="max-w-4xl mx-auto bg-white p-6 shadow-md rounded">
+                <div className="max-w-4xl mx-auto bg-white p-6 shadow-md rounded dark:bg-medium dark:border-2">
                     <img
                         src={campaign.petImage}
                         alt={campaign.petName}
@@ -67,7 +67,7 @@ const DonationDetails = () => {
                         <strong>Maximum Donation:</strong> ${campaign.maxDonation}
                     </p>
                     <p className="text-lg mb-4">
-                        <strong>Donated Amount:</strong> ${campaign.donatedAmount || 0}
+                        <strong>Donated Amount:</strong> ${campaign.maxDonation / 2 || 0}
                     </p>
                     <p className="text-lg mb-4">
                         <strong>Last Date of Donation:</strong> {new Date(campaign.lastDate).toLocaleDateString()}

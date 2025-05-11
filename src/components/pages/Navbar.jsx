@@ -54,8 +54,8 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="fixed w-full z-50 top-0 bg-gradient-to-r dark:bg-medium dark:text-white from-violet-500 to-fuchsia-500 text-white">
-            <div className="mx-auto flex dark:bg-medium dark:border-b-2 dark:text-white justify-between items-center py-4 px-6">
+        <nav className="fixed w-full z-50 top-0 bg-gradient-to-r dark:bg-gray-900 dark:text-white from-violet-500 to-fuchsia-500 text-white rounded-b-md">
+            <div className="mx-auto flex dark:bg-gray-900 dark:border-b-2 dark:text-white justify-between items-center py-4 px-6">
                 {/* Logo */}
                 <Link to="/" className="flex items-center text-5xl font-bold text-red-400 uppercase">
                     <img className="h-12 w-12 rounded-full" src={logo} alt="Logo" />
