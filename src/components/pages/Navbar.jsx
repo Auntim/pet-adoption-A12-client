@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -13,6 +13,25 @@ const Navbar = () => {
     const { user, logout } = useContext(AuthContext);
     const navigate = useNavigate();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const [isOpen, setIsOpen] = useState(false);
+    const dropdownRef = useRef(null);
+
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            // If click is outside this component, close dropdown
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setIsOpen(false);
+            }
+        };
+
+        // Attach listener globally
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
 
     const handleLogout = async () => {
         try {
@@ -76,57 +95,55 @@ const Navbar = () => {
                     </li>
                 </ul>
 
-                {/* User Actions */}
-                <div className="flex justify-center items-center space-x-4">
-                    {user ? (
-                        <>
-                            <Link
-                                to="dashboard"
-                                className="px-2 py-2 hover:bg-blue-300 transition font-semibold rounded-lg"
-                            >
-                                Dashboard
-                            </Link>
-                            <div
-                                onClick={handleLogout}
-                                className="px-2 py-2 hover:bg-blue-300 transition font-semibold rounded-lg cursor-pointer"
-                            >
-                                Logout
-                            </div>
-                            <div className="relative group">
+
+
+                <div className="flex items-center ">
+                    {/* User Actions */}
+                    <div className="flex items-center">
+                        {user ? (
+                            <div className="relative" ref={dropdownRef} >
+                                {/* User Photo */}
                                 <img
+                                    onClick={() => setIsOpen(!isOpen)}
                                     className="rounded-full h-10 w-10 border-2 border-yellow-500 cursor-pointer"
                                     referrerPolicy="no-referrer"
-                                    src={user && user.photoURL ? user.photoURL : avatarImg}
+                                    src={user?.photoURL || avatarImg}
                                     alt="profile"
                                 />
-                                {user && user.displayName && (
-                                    <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 px-2 py-1 text-sm text-white bg-black rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
-                                        {user.displayName}
-                                    </span>
+
+                                {/* Dropdown */}
+                                {isOpen && (
+                                    <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-900 shadow-lg rounded-xl p-3 z-50">
+                                        <p className="text-center font-semibold text-sm mb-2 text-gray-800 dark:text-white">
+                                            {user?.displayName || "User"}
+                                        </p>
+                                        <Link
+                                            to="/dashboard"
+                                            className="block px-4 py-2 rounded hover:bg-blue-100 dark:hover:bg-gray-700 text-gray-800 dark:text-white"
+                                        >
+                                            Dashboard
+                                        </Link>
+                                        <button
+                                            onClick={handleLogout}
+                                            className="w-full text-left px-4 py-2 rounded hover:bg-blue-100 dark:hover:bg-gray-700 text-red-500 dark:text-red-400"
+                                        >
+                                            Logout
+                                        </button>
+                                    </div>
                                 )}
                             </div>
-                        </>
-                    ) : (
-                        <>
+                        ) : (
                             <Link
                                 to="/login"
-                                className="px-4 py-3  hover:bg-blue-300 rounded-md transition font-semibold"
+                                className="px-4 py-3 hover:bg-blue-300 rounded-md transition font-semibold"
                             >
                                 Login
                             </Link>
-                            <Link
-                                to="/register"
-                                className="px-4 py-3 hover:bg-blue-300 rounded-md transition font-semibold"
-                            >
-                                Sign Up
-                            </Link>
-                        </>
-                    )}
-                </div>
-
-                {/* Dark Mode Toggle */}
-                <div className="rounded ml-3 mr-2  ">
-                    <ToggleDark />
+                        )}
+                    </div>
+                    <div className="rounded ml-3 mr-2 ">
+                        <ToggleDark />
+                    </div>
                 </div>
 
                 {/* Hamburger Menu (Mobile) */}
@@ -147,7 +164,7 @@ const Navbar = () => {
 
             {/* Mobile Dropdown Menu */}
             {isMenuOpen && (
-                <ul className="md:hidden  dark:bg-gray-600 bg-violet-600 space-y-4 p-4">
+                <ul className="md:hidden    absolute top-20 right-4 w-40 backdrop-blur-lg bg-black/70 text-white rounded-xl shadow-2xl p-1 space-y-3 z-50 border border-gray-800">
                     <li>
                         <NavLink
                             to="/"

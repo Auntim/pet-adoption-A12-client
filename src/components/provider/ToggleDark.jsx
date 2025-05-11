@@ -24,7 +24,7 @@ function ToggleDark() {
     }, [darkmode])
 
     return (
-        <div className="relative w-16 h-8 flex items-center   cursor-pointer rounded-full p-1"
+        <div className="relative w-16 h-8 flex items-center   cursor-pointer rounded-full p-1 border border-fuchsia-800"
             onClick={() => setDarkmode(!darkmode)}>
             <FaMoon
                 className={`text-white rounded-full transition-opacity duration-300 ${darkmode ? 'opacity-100' : 'opacity-0'}`}

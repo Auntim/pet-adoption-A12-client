@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
 import { MdDashboard } from "react-icons/md";
 import ToggleDark from '../../components/provider/ToggleDark';
+import avatarImg from '../../assets/images/logo.png';
 
 
 function UserHome() {
