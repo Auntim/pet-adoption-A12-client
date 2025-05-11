@@ -67,7 +67,7 @@ const PetsListing = ({ limit }) => {
     }, [hasMore]);
 
     return (
-        <div className="p-6 dark:bg-medium dark:text-white bg-w">
+        <div className="p-6 dark:bg-medium dark:text-white bg-w pt-12">
             <Helmet>
                 <title>Pet | Pet-Linting</title>
             </Helmet>
@@ -88,7 +88,7 @@ const PetsListing = ({ limit }) => {
                 <select
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
-                    className="border border-gray-300 rounded px-4 py-2"
+                    className="border border-gray-300 rounded px-4 py-2 dark:text-black"
                 >
                     <option value="">All Categories</option>
                     <option value="Dog">Dog</option>

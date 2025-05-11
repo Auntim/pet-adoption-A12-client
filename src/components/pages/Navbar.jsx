@@ -96,7 +96,6 @@ const Navbar = () => {
                 </ul>
 
 
-
                 <div className="flex items-center ">
                     {/* User Actions */}
                     <div className="flex items-center">
@@ -135,13 +134,13 @@ const Navbar = () => {
                         ) : (
                             <Link
                                 to="/login"
-                                className="px-4 py-3 hover:bg-blue-300 rounded-md transition font-semibold"
+                                className="px-3 py-2 hover:bg-blue-300 rounded-md transition font-semibold border-2 "
                             >
                                 Login
                             </Link>
                         )}
                     </div>
-                    <div className="rounded ml-3 mr-2 ">
+                    <div className="rounded ml-3 mr-2 hidden md:block">
                         <ToggleDark />
                     </div>
                 </div>
@@ -164,7 +163,7 @@ const Navbar = () => {
 
             {/* Mobile Dropdown Menu */}
             {isMenuOpen && (
-                <ul className="md:hidden    absolute top-20 right-4 w-40 backdrop-blur-lg bg-black/70 text-white rounded-xl shadow-2xl p-1 space-y-3 z-50 border border-gray-800">
+                <ul className="md:hidden   absolute top-20 right-4 w-40 backdrop-blur-lg bg-black/70 text-white rounded-xl shadow-2xl p-1 space-y-3 z-50 border border-gray-800">
                     <li>
                         <NavLink
                             to="/"
@@ -191,6 +190,12 @@ const Navbar = () => {
                         >
                             Donation
                         </NavLink>
+                    </li>
+                    <li>
+                        <div className="rounded gap-1 ml-3 flex items-center md:hidden">
+                            <p>Theme :</p>
+                            <ToggleDark />
+                        </div>
                     </li>
 
                 </ul>
