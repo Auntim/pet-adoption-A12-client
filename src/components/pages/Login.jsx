@@ -47,11 +47,7 @@ function Login() {
         try {
             const result = await googleSignIn();
             console.log('Google Sign-In Successful:', result.user);
-            Swal.fire({
-                icon: 'success',
-                title: 'Login Successful',
-                text: `Welcome back, ${result.user.displayName}!`,
-            });
+            toast.success(`Welcome back, ${result.user.displayName}!`)
             navigate(from, { replace: true });
         } catch (error) {
             console.error('Google Sign-In Error:', error.message);

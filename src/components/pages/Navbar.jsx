@@ -3,11 +3,11 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai"; // Import close icon
-import Swal from "sweetalert2";
 import { AuthContext } from "../provider/AuthProvider";
 import logo from "../../assets/images/logo.png";
 import avatarImg from "../../assets/images/logo.png";
 import ToggleDark from "../provider/ToggleDark";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
     const { user, logout } = useContext(AuthContext);
@@ -36,20 +36,10 @@ const Navbar = () => {
     const handleLogout = async () => {
         try {
             await logout();
-            Swal.fire({
-                icon: "success",
-                title: "Logged Out!",
-                text: "You have been successfully logged out.",
-                timer: 1000,
-                showConfirmButton: false,
-            });
+            toast.success('Logout Successful')
             navigate("/login");
         } catch (error) {
-            Swal.fire({
-                icon: "error",
-                title: "Error",
-                text: error.message,
-            });
+            toast.error(error.message)
         }
     };
 

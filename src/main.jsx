@@ -146,7 +146,7 @@ createRoot(document.getElementById('root')).render(
           <RouterProvider router={router} />
 
         </AuthProviders>
-        <Toaster position='top-right' reverseOrder={false} />
+        <Toaster position='bottom-right' reverseOrder={false} />
       </HelmetProvider>
     </QueryClientProvider>
 
