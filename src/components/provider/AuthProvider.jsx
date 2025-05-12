@@ -1,5 +1,5 @@
 
-import React, { createContext, useState, useEffect } from 'react';
+import { createContext, useState, useEffect } from 'react';
 import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
@@ -7,7 +7,8 @@ import {
     signInWithPopup,
     onAuthStateChanged,
     signOut,
-    updateProfile
+    updateProfile,
+    GithubAuthProvider
 } from 'firebase/auth';
 // import axios from 'axios';
 import { auth } from '../../firebase/firebase.config';
@@ -16,6 +17,7 @@ import useAxiosPublic from '../hooks/useAxiosPublic';
 export const AuthContext = createContext(null);
 
 const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider();
 
 function AuthProviders({ children }) {
     const [user, setUser] = useState(null);
@@ -36,6 +38,10 @@ function AuthProviders({ children }) {
     const googleSignIn = () => {
         setLoading(true);
         return signInWithPopup(auth, googleProvider);
+    };
+    const githubSignIn = () => {
+        setLoading(true);
+        return signInWithPopup(auth, githubProvider);
     };
 
     const logout = () => {
@@ -83,7 +89,8 @@ function AuthProviders({ children }) {
         signInUser,
         googleSignIn,
         logout,
-        updateuser
+        updateuser,
+        githubSignIn
     };
 
     return (

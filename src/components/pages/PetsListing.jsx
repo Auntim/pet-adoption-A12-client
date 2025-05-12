@@ -71,19 +71,19 @@ const PetsListing = ({ limit }) => {
             <Helmet>
                 <title>Pet | Pet-Linting</title>
             </Helmet>
-            <h2 className="text-2xl md:text-5xl dark:text-white text-center font-bold text-orange-600 mb-6 ">---Available Pets for Adoption---</h2>
+            <h2 className="text-2xl md:text-3xl dark:text-white text-center font-bold text-orange-600 mb-6 pt-12">---Available Pets for Adoption---</h2>
 
             {/* Search and Filter */}
-            <div className="flex container mx-auto justify-between items-center mb-6">
-                <div className="flex gap-1">
+            <div className="flex container mx-auto justify-between items-center mb-6 ">
+                <div className="flex ">
                     <input
                         type="text"
                         placeholder="Search by name"
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
-                        className="border border-gray-500 rounded px-4 py-2 w-3/4"
+                        className="border border-gray-500 rounded px-4 py-2 w-4/5 text-black"
                     />
-                    <button className="btn px-3 py-2 bg-blue-400">Search</button>
+
                 </div>
                 <select
                     value={category}

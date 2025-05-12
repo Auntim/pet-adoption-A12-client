@@ -80,7 +80,7 @@ const Navbar = () => {
                                 isActive ? "px-2 py-2 rounded-lg hover:bg-blue-300 transition font-semibold" : "px-2 py-2 hover:bg-blue-300 transition font-semibold rounded-lg"
                             }
                         >
-                            Pet-Listening
+                            Pet-Listing
                         </NavLink>
                     </li>
                     <li>
@@ -179,7 +179,7 @@ const Navbar = () => {
                             className="block text-xl font-semibold hover:bg-blue-300 p-2 rounded-lg"
                             onClick={() => setIsMenuOpen(false)}
                         >
-                            Pet-Listening
+                            Pet-Listing
                         </NavLink>
                     </li>
                     <li>

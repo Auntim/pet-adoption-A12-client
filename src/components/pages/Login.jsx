@@ -1,5 +1,5 @@
 import { useNavigate, Link, useLocation } from 'react-router-dom';
-import { FaGoogle } from "react-icons/fa";
+import { FaGithub, FaGoogle } from "react-icons/fa";
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import { Helmet } from 'react-helmet-async';
@@ -7,10 +7,11 @@ import { useContext } from 'react';
 import loginLotti from '../../assets/lotti/login.json'
 import Lottie from 'lottie-react';
 import { AuthContext } from '../provider/AuthProvider';
+import toast from 'react-hot-toast';
 
 
 function Login() {
-    const { googleSignIn, signInUser } = useContext(AuthContext);
+    const { googleSignIn, signInUser, githubSignIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -59,6 +60,17 @@ function Login() {
                 title: 'Login Failed',
                 text: 'Google sign-in was unsuccessful. Please try again.',
             });
+        }
+    };
+    const handleGithubLogin = async () => {
+        try {
+            const result = await githubSignIn();
+            console.log('Github Sign-In Successful:', result.user);
+            toast.success('Successfully Logged In')
+            navigate(from, { replace: true });
+        } catch (error) {
+            console.error('Github Sign-In Error:', error.message);
+            toast.error(error.message);
         }
     };
 
@@ -126,10 +138,18 @@ function Login() {
                 {/* Google Sign-In Button */}
                 <button
                     onClick={handleGoogleLogin}
-                    className="btn btn-outline w-full flex items-center justify-center gap-2 text-[14px] md:text-xl dark:text-white"
+                    className="btn btn-outline w-full flex items-center justify-center gap-2 text-[14px] md:text-xl dark:text-white text-white"
                 >
-                    <FaGoogle className="w-3 h-3 md:w-5 md:h-5 dark:text-white" />
+                    <FaGoogle className="w-3 h-3 md:w-5 md:h-5 dark:text-white text-black" />
                     Sign in with Google
+                </button>
+                {/* github sign in */}
+                <button
+                    onClick={handleGithubLogin}
+                    className="btn btn-outline w-full flex items-center justify-center gap-2 text-[14px] md:text-xl dark:text-white mt-1.5 text-white"
+                >
+                    <FaGithub className="w-3 h-3 md:w-5 md:h-5 dark:text-white text-black" />
+                    Sign in with Github
                 </button>
             </div>
         </div>
