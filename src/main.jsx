@@ -38,12 +38,13 @@ import PaymentHistory from './components/pages/PaymentHistory';
 import MyDonations from './components/pages/MyDonations';
 import AdminHome from './Dashboard/UserPage/AdminHome';
 import Myservice from './Dashboard/UserPage/Myservice';
+import NotFound from './components/pages/NotFound';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
-    errorElement: <div>Not Found</div>,
+    errorElement: <NotFound></NotFound>,
     children: [
       {
         path: "/",

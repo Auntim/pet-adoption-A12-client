@@ -69,7 +69,7 @@ const PetsListing = ({ limit }) => {
     return (
         <div className="p-6 dark:bg-medium dark:text-white bg-w pt-12">
             <Helmet>
-                <title>Pet | Pet-Linting</title>
+                <title>Pet | All-pets</title>
             </Helmet>
             <h2 className="text-2xl md:text-3xl dark:text-white text-center font-bold text-orange-600 mb-6 pt-12">---Available Pets for Adoption---</h2>
 
